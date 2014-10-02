@@ -10,3 +10,6 @@ enable :sessions
 use Rack::Flash, :sweep => true
 set :sessions => true
 
+get '/home' do
+  erb :home
+end
