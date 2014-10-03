@@ -21,3 +21,7 @@
   width: 50%;
   border: none;
 }
+
+.sign_in_box {
+  border: 1px solid tomato;
+}

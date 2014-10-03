@@ -1,10 +1,40 @@
-	<nav>
-	<ul>
-		<li><a href="/home"><img src="../images/home.png"></a> | </li>
-		<li><a href="/profile"><img src="../images/user1.png"></a> | </li>
-		<li><a href="/settings"><img src="../images/settings.png"></a> | </li>
-		<li><form method="post" action="/sign_out">
-  		<input type="submit" value="Sign Out" id="signout">
-		</form></li>
-	</ul>
-	</nav>
+  <nav>
+    <ul>
+      <li><a href="/home"><img src="../images/home.png"></a> | </li>
+      <li><a href="/profile"><img src="../images/user1.png"></a> | </li>
+      <li><a href="/settings"><img src="../images/settings.png"></a> | </li>
+      <li><form method="post" action="/sign_out">
+        <input type="submit" value="Sign Out" id="signout">
+      </form></li>
+    </ul>
+  </nav>
+
+  <div class="wrapper">
+
+    <h1>Update Your Profile:</h1>
+
+    <form method="POST" action="/update">
+
+      <input type="text" name="[user]fname" value="<%= @current_user.fname %>" class="input_box">
+
+      <input type="text" name="[user]lname" value="<%= @current_user.lname %>" class="input_box">
+
+      <input type="text" name="[user]username" value="<%= @current_user.username %>" class="input_box">
+
+      <input type="text" name="[user]email" value="<%= @current_user.email %>" class="input_box">
+
+      <input type="password" name="[user]password" value="<%= @current_user.password %>" class="input_box">
+
+      <input type="text" name="[user]location" value="<%= @current_user.location %>" class="input_box">
+
+      <input type="text" name="[account]profile_image_url" value="<%= @current_user.account.profile_image_url %>" class="input_box">
+      <br>
+      <input type="submit" value="Save Changes" class="submit_btn">
+    </form>
+
+    <br>
+    <form method="POST" action='/delete'>
+      <input type="submit" value="Delete Account" class="submit_btn">
+    </form>
+
+  </div>

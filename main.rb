@@ -4,6 +4,7 @@ require "bundler/setup"
 require "sinatra/base"
 require "rack-flash"
 require "./models"
+require 'pry'
 
 set :database, "sqlite3:microblog.sqlite3"
 enable :sessions
@@ -12,8 +13,10 @@ set :sessions => true
 
 def set_current_user
   if session[:user_id]
-    User.find(session[:user_id])
-    # @current_user = User.find(session[:user_id])
+    @current_user = User.find(session[:user_id])
+    unless @current_user.account
+      @current_user.account = Account.create
+    end
   end
 end
 
@@ -30,7 +33,12 @@ get '/profile' do
 end
 
 get '/settings' do
-  erb :settings
+  set_current_user
+  if @current_user
+    erb :settings
+  else
+    redirect '/error'
+  end
 end
 
 get '/error' do
@@ -51,7 +59,7 @@ post '/in' do
 
   @user = User.find_by(email: email)
 
-  if @user.password == password
+  if @user && @user.password == password
     flash[:notice] = 'You’ve been signed in successfully.'
     session[:user_id] = @user.id
     redirect '/home'
@@ -73,14 +81,14 @@ post '/up' do
     u.password = params[:user][:password]
     u.location = params[:user][:location]
   end
-  # if signup was successful, redirect to /home
+  
+  
 end
 
 post '/sign_out' do
   puts "****"
   puts session[:user_id]
   puts "*****"
-  # session.clear
   session[:user_id] = nil
   puts "*****"
   puts session[:user_id]
@@ -88,4 +96,26 @@ post '/sign_out' do
   flash[:notice] = 'You have successfully signed out!'
   redirect '/sign_out_confirm'
 end
+
+
+post '/update' do
+  puts "****"
+  puts params
+  puts "****"
+  set_current_user
+
+  @current_user.update_attributes(
+    fname: params[:user][:fname],
+    lname: params[:user][:lname],
+    username: params[:user][:username],
+    email: params[:user][:email],
+    password: params[:user][:password],
+    location: params[:user][:location]
+  )
+
+  @current_user.account.update_attributes(
+    profile_image_url: params[:account][:profile_image_url]
+  )
+end
+
 
