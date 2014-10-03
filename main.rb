@@ -29,6 +29,10 @@ get '/' do
   end
 end
 
+get '/index' do
+  erb :index
+end
+
 get '/home' do
   erb :home
 end
@@ -50,9 +54,6 @@ get '/error' do
   erb :error
 end
 
-get '/sign_up' do
-  erb :sign_up
-end
 
 post '/in' do
 
