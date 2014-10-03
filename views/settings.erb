@@ -29,12 +29,12 @@
 
       <input type="text" name="[account]profile_image_url" value="<%= @current_user.account.profile_image_url %>" class="input_box">
       <br>
-      <input type="submit" value="Save Changes" class="submit_btn">
+      <input type="submit" value="Save Changes" class="submit_btn" id="save_btn">
     </form>
 
     <br>
     <form method="POST" action='/delete'>
-      <input type="submit" value="Delete Account" class="submit_btn">
+      <input type="submit" value="Delete Account" class="submit_btn" id="delete_btn">
     </form>
 
   </div>

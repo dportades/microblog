@@ -12,32 +12,69 @@
 	<h1><%= flash[:notice] %></h1>
 	<h1><%= flash[:alert] %></h1>
 
-	<div class="wrapper">
+<div class="homepage">
+	<div class="homepage_all_users">
 		
 		<% if @current_user.relationships.count >= 1 %>
 			<%= User.find(@current_user.relationships[0].followed_id).username %>
 			<%= User.find(@current_user.relationships[1].followed_id).username %>
 			<p>Total Followers: <%= @current_user.relationships.count%> </p>
 		<% else %>
-			<p>You currently have no followers.</p>
+			<p>You currently have no friends.</p>
 		<% end %>
 
 		<!-- list of other users -->
 
 		
-	
+		<h3 class="homepage_display_name"><%=User.find(1).username %></h3>
+		<br />
+		<img class="homepage_image" src="<%= User.find(1).account.profile_image_url %>">
+		<br />
+		<form method="post" action="/follow">
+			<input type="submit" value="Follow Me" class="follow_btn">
+		</form>
 
-		<%=User.find(1).username %>
-		<img src="<%= User.find(1).account.profile_image_url %>"
-		<form method="post" action="/follow">
-			<input type="submit" value="Follow Me" class="submit_btn">
-		</form>
+
 		<br>
-		<%=User.find(4).username %>
-		<img src="<%= User.find(4).account.profile_image_url %>"
+
+		<h3 class="homepage_display_name"><%=User.find(2).username %></h3>
+		<br />
+		<img class="homepage_image" src="<%= User.find(2).account.profile_image_url %>">
+		<br />
 		<form method="post" action="/follow">
-			<input type="submit" value="Follow Me" class="submit_btn">
+			<input type="submit" value="Follow Me" class="follow_btn">
 		</form>
-		
+
+
+		<br>
+
+		<h3 class="homepage_display_name"><%=User.find(3).username %></h3>
+		<br />
+		<img class="homepage_image" src="<%= User.find(3).account.profile_image_url %>">
+		<br />
+		<form method="post" action="/follow">
+			<input type="submit" value="Follow Me" class="follow_btn">
+		</form>
+
+
+		<br>
+
+		<h3 class="homepage_display_name"><%=User.find(4).username %></h3>
+		<br />
+		<img class="homepage_image" src="<%= User.find(4).account.profile_image_url %>">
+		<br />
+		<form method="post" action="/follow">
+			<input type="submit" value="Follow Me" class="follow_btn">
+		</form>
+
 
 	</div>
+
+
+
+	<div class="homepage_all_posts">
+	<p>hello</p>
+
+	</div>
+
+</div>
