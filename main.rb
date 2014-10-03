@@ -34,6 +34,7 @@ get '/index' do
 end
 
 get '/home' do
+  set_current_user
   erb :home
 end
 
@@ -157,3 +158,9 @@ post "/blogposts" do
 
   redirect "/profile"
 end
+
+
+# post '/follow' do
+#   Relationship.create(follower_id: ??, followed_id: @current_user)
+#   redirect '/profile'
+# end

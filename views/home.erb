@@ -13,7 +13,27 @@
 	<h1><%= flash[:alert] %></h1>
 
 	<div class="wrapper">
-	
+		
+		<% if @current_user.relationships.count >= 1 %>
+			<%= User.find(@current_user.relationships[0].followed_id).username %>
+			<%= User.find(@current_user.relationships[1].followed_id).username %>
+			<p>Total Followers: <%= @current_user.relationships.count%> </p>
+		<% else %>
+			<p>You currently have no followers.</p>
+		<% end %>
 
+		<!-- list of other users -->
+		<%=User.find(26).username %>
+		<img src="<%= User.find(26).account.profile_image_url %>"
+		<form method="post" action="/follow">
+			<input type="submit" value="Follow Me" class="submit_btn">
+		</form>
+		<br>
+		<%=User.find(25).username %>
+		<img src="<%= User.find(25).account.profile_image_url %>"
+		<form method="post" action="/follow">
+			<input type="submit" value="Follow Me" class="submit_btn">
+		</form>
+		
 
 	</div>

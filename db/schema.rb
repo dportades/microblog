@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002170737) do
+ActiveRecord::Schema.define(version: 20141003200533) do
 
   create_table "accounts", force: true do |t|
     t.integer  "user_id"
@@ -29,6 +29,11 @@ ActiveRecord::Schema.define(version: 20141002170737) do
     t.string   "blog_media_url"
     t.datetime "blog_post_date"
     t.integer  "blog_post_count"
+  end
+
+  create_table "relationships", force: true do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
   end
 
   create_table "users", force: true do |t|
