@@ -24,4 +24,15 @@
 
 .sign_in_box {
   border: 1px solid tomato;
+  width: 75%;
+  display: none;
+}
+
+.sign_up_box {
+  border: 1px solid tomato;
+}
+
+.sign_in_link {
+  width: 50%;
+  
 }
