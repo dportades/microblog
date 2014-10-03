@@ -35,6 +35,7 @@ end
 
 get '/home' do
   set_current_user
+  # @user = User.all
   erb :home
 end
 

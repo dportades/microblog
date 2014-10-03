@@ -23,6 +23,7 @@
 		<% end %>
 
 		<!-- list of other users -->
+		
 		<%=User.find(26).username %>
 		<img src="<%= User.find(26).account.profile_image_url %>"
 		<form method="post" action="/follow">
