@@ -9,6 +9,7 @@
 	</ul>
 	</nav>
 
+<div class="left">
 	<div class="main_profile">
 
   <img src="<%= @current_user.account.profile_image_url %>" align="left">
@@ -19,25 +20,18 @@
 	<li># Following</li>
 	</ul>
 	</div>
-	
-<!-- 	<div class="profile_feed">
-		<form action="/" method="post">
-			<input type="text" name="" value="" class="input_box" placeholder="Compose new blog post..." />
-			<input type="submit" value="Post" class="submit_btn">
-			<input type="image" src="../images/text.png" width="25px" height="25px">
-			<input type="image" width="25px" height="25px" src="../images/media.png">
-		</form>
-	</div> -->
 
+<!-- INPUT FORM -->
 <div class="input_blog">
+
   <div class="post_media">
   <a href="#" class="text_btn">
   <img src="../images/text.png">Create a blog post</a>
   <a href="#" class="media_btn">
-  <img src="../images/media.png">Post a picture/video</a>
+  <img src="../images/media.png">Post a picture</a>
   </div>
 
-<div class="post_box">
+<div class="post_box" >
   <form method="POST" action="/blogposts">
     <textarea name="[post]blog_post" placeholder="Compose new blog post..." class="submit_post"></textarea>
     <br />
@@ -45,18 +39,27 @@
   </form>
 </div>
 
-<div class="media_box">
+<div class="media_box"  style="display:none">
   <form method="POST" action="/blogposts">
     <textarea name="[post]blog_media_url" placeholder="Insert media link..." class="submit_post"></textarea>
-    <br />
     <input type="submit" class="submit_post_btn">
   </form>
 </div>
 
+</div>
+
+
+
+<!-- BLOG FEED -->
 <div class="blog_feed">
 	<% @current_user.posts.each do |blogpost| %>
+	<% if blogpost.blog_post %>
 	<%= blogpost.blog_post %>
-  <img src="<%= blogpost.blog_media_url %>">
+	<% else %>
+	<img src="<%= blogpost.blog_media_url %>">
+  	<% end %>
 	<% end %>
+	</ul>
 </div>
+
 

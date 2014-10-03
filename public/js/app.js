@@ -5,11 +5,14 @@ $(document).ready(function(){
   });
 
   $(".text_btn").click(function(){
-    $(".post_box").toggle();
+    $(".post_box").show();
+    $(".media_box").hide();
+
   });
 
   $(".media_btn").click(function(){
-    $(".media_box").toggle();
+    $(".media_box").show();
+    $(".post_box").hide();
   });
 
 });
