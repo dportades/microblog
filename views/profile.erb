@@ -43,5 +43,18 @@
     <input type="submit" class="submit_post_btn">
   </form>
 </div>
+
+<div class="media_box">
+  <form method="POST" action="/blogposts">
+    <textarea name="[post]blog_post" placeholder="Compose new blog post..." class="submit_post"></textarea>
+    <br />
+    <input type="submit" class="submit_post_btn">
+  </form>
+</div>
+
+<div class="blog_feed">
+	<% @current_user.posts.each do |blogpost| %>
+	<%= blogpost.blog_post %>
+	<% end %>
 </div>
 

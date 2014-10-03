@@ -154,4 +154,6 @@ post "/blogposts" do
   puts @current_user.posts[0].blog_post
   puts "****"
   puts "****"
+
+  redirect "/profile"
 end

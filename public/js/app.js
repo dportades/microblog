@@ -9,7 +9,7 @@ $(document).ready(function(){
   });
 
   $(".media_btn").click(function(){
-    $(".post_box").toggle();
+    $(".media_box").toggle();
   });
 
 });
