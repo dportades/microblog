@@ -152,3 +152,12 @@ ul li img {
   width: 60%;
 }
 
+
+html {
+	background-color: azure;
+/*  background: url(http://i628.photobucket.com/albums/uu5/LpianoBatista/StaticTV.gif) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
+}
