@@ -25,7 +25,7 @@ get '/' do
   if @current_user
     redirect '/home'
   else 
-     erb :sign_in
+     erb :index
   end
 end
 
