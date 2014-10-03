@@ -41,7 +41,11 @@ ul li img {
 
 
 .left {
-	width:33%;
+	left:0;
+}
+
+.right {
+	right:0;
 }
 
 /* MAIN PROFILE DIV */
@@ -120,12 +124,16 @@ ul li img {
 	border-radius: 5px;
 	margin: 10px 20px 10px 20px;
 	display:inline-block;
-	float:right;
 	vertical-align: top;
-
-
 }
 
 .blog_feed img {
-	width:50%;
+	width:75%;
+	height:75%;
+}
+
+.blog_feed ul li {
+	display:block;
+	line-height: 20px;
+	text-align: left;
 }
