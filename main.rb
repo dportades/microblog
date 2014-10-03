@@ -135,15 +135,23 @@ post "/blogposts" do
   puts params
   puts "****"
   
-  blog_post = Post.create do |p|
+  blogpost = Post.create do |p|
     p.blog_post = params[:post][:blog_post]
     p.blog_media_url = params[:post][:blog_media_url]
   end
 
-  @current_user.posts << blog_post
-# not assigning posts to current user
-  # @current_user.post.update_attributes(
-  #   blog_post: params[:post][:blog_post],
-  #   blog_media_url: params[:post][:blog_post]
-  #   )
+  blogpost.user_id = @current_user.id
+  blogpost.save
+  puts "****"
+  puts "****"
+  # current user's id
+  puts blogpost.user_id
+  puts "****"
+  # lists the current post
+  puts blogpost.blog_post
+  puts "****"
+  # lists the first post
+  puts @current_user.posts[0].blog_post
+  puts "****"
+  puts "****"
 end
