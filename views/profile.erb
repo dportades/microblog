@@ -15,9 +15,8 @@
   <img src="<%= @current_user.account.profile_image_url %>" align="left">
 	<h4><%= @current_user.username %></h4>
 	<ul>
-	<li># Posts</li>
-	<li># Followers</li>
-	<li># Following</li>
+	<li><%= @current_user.posts.count %> Posts</li>
+	<li><%= @current_user.relationships.count %> Friends</li>
 	</ul>
 	</div>
 
@@ -50,16 +49,19 @@
 
 
 
+<div class="right">
 <!-- BLOG FEED -->
 <div class="blog_feed">
+	<ul>
 	<% @current_user.posts.each do |blogpost| %>
 	<% if blogpost.blog_post %>
-	<%= blogpost.blog_post %>
+	<li><%= blogpost.blog_post %></li>
 	<% else %>
-	<img src="<%= blogpost.blog_media_url %>">
+	<li><img src="<%= blogpost.blog_media_url %>"></li>
   	<% end %>
 	<% end %>
 	</ul>
+</div>
 </div>
 
 

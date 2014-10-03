@@ -23,15 +23,18 @@
 		<% end %>
 
 		<!-- list of other users -->
+
 		
-		<%=User.find(26).username %>
-		<img src="<%= User.find(26).account.profile_image_url %>"
+	
+
+		<%=User.find(1).username %>
+		<img src="<%= User.find(1).account.profile_image_url %>"
 		<form method="post" action="/follow">
 			<input type="submit" value="Follow Me" class="submit_btn">
 		</form>
 		<br>
-		<%=User.find(25).username %>
-		<img src="<%= User.find(25).account.profile_image_url %>"
+		<%=User.find(4).username %>
+		<img src="<%= User.find(4).account.profile_image_url %>"
 		<form method="post" action="/follow">
 			<input type="submit" value="Follow Me" class="submit_btn">
 		</form>
