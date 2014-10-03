@@ -41,7 +41,7 @@ ul li img {
 }
 
 .main_profile {
-	width:250px;
+	width:270px;
 	float: left;
 	border:2px solid black;
 	border-radius: 5px;
@@ -61,25 +61,34 @@ ul li img {
 	padding:20px;
 }
 
+.post_media {
+
+}
 .post_media img {
 	width:25px;
 	height:25px;
 	margin:0 5px 0 5px;
-	display:inline;
+	display:inline-block;
 }
 
-.post_box {
-	width:100%;
-	display:inline;
+.post_media a {
+	text-decoration: none;
+}
+
+.submit_post{
+  width: 50%;
+  margin: 10px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  text-align: center;
 }
 
 .submit_post_btn {
+	margin-left: 100px;
   color: #fff;
   background-color: #000;
-  text-decoration: none;
-  text-align: center;
-  border-radius: 3px;
+  border-radius: 5px;
+  height: 40px;
+  width: 25%;
   border: none;
-  padding: 10px;
-  display:inline;
 }
