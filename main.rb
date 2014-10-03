@@ -38,6 +38,7 @@ get '/home' do
 end
 
 get '/profile' do
+  set_current_user
   erb :profile
 end
 
@@ -129,14 +130,20 @@ end
 
 
 post "/blogposts" do
+  set_current_user
   puts "****"
   puts params
   puts "****"
   
-  @blog_post = Post.create do |p|
+  blog_post = Post.create do |p|
     p.blog_post = params[:post][:blog_post]
     p.blog_media_url = params[:post][:blog_media_url]
   end
 
-  @current_user << @blog_post
+  @current_user.posts << blog_post
+# not assigning posts to current user
+  # @current_user.post.update_attributes(
+  #   blog_post: params[:post][:blog_post],
+  #   blog_media_url: params[:post][:blog_post]
+  #   )
 end
