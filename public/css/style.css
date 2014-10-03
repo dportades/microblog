@@ -24,6 +24,11 @@ ul li img {
 	width:20px;
 }
 
+.profile_wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
 #signout {
     color: #fff;
     background-color: #000;
@@ -40,21 +45,14 @@ ul li img {
 }
 
 
-.left {
-	left:0;
-}
-
-.right {
-	right:0;
-}
 
 /* MAIN PROFILE DIV */
 .main_profile {
-	width:340px;
+	width:100%;
 	height:200px;
 	border:2px solid black;
 	border-radius: 5px;
-	margin-left:20px;
+	margin: 20px;
 }
 
 .main_profile ul li {
@@ -73,11 +71,10 @@ ul li img {
 /* INPUT BLOG DIV */
 
 .input_blog {
-	width:340px;
-	height:170px;
+	width:100%;
 	border:2px solid black;
 	border-radius: 5px;
-	margin: 10px 20px 10px 20px;
+	margin: 20px;
 	display:block;
 
 }
@@ -100,29 +97,34 @@ ul li img {
 
 /* INPUT FORM */
 .submit_post{
-  width: 300px;
-  margin: 10px;
+  width: 90%;
+  height: 90px;
+  margin: 15px;
   border-radius: 4px;
   border: 1px solid #000;
   text-align: center;
 }
 
 .submit_post_btn {
-  margin-left: 100px;
+  margin-left: 37%;
   color: #fff;
   background-color: #000;
   border-radius: 5px;
   height: 40px;
   width: 25%;
   border: none;
+  margin-bottom: 20px;
 }
+
+
 
 /* BLOG FEED DIV */
 .blog_feed {
-	width:340px;
+	width:100%;
 	border:2px solid black;
 	border-radius: 5px;
-	margin: 10px 20px 10px 20px;
+	margin: 20px;
+  margin-left: 40px;
 	display:inline-block;
 	vertical-align: top;
 }
@@ -137,3 +139,16 @@ ul li img {
 	line-height: 20px;
 	text-align: left;
 }
+
+.left {
+  display: inline-block;
+  vertical-align: top;
+  width: 35%;
+}
+
+.right {
+  display: inline-block;
+  vertical-align: top;
+  width: 60%;
+}
+
