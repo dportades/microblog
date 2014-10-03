@@ -21,7 +21,12 @@ def set_current_user
 end
 
 get '/' do
-  erb :sign_in
+  set_current_user
+  if @current_user
+    redirect '/home'
+  else 
+     erb :sign_in
+  end
 end
 
 get '/home' do
@@ -45,26 +50,23 @@ get '/error' do
   erb :error
 end
 
-get '/sign_out_confirm' do
-  erb :sign_out_confirm
-end
-
 get '/sign_up' do
   erb :sign_up
 end
 
 post '/in' do
+
   email = params[:user][:email]
   password = params[:user][:password]
 
   @user = User.find_by(email: email)
 
   if @user && @user.password == password
-    flash[:notice] = 'You’ve been signed in successfully.'
+    # flash[:notice] = 'You’ve been signed in successfully.'
     session[:user_id] = @user.id
     redirect '/home'
   else
-    flash[:alert] = "There was a problem with the log in."
+    flash[:alert] = "Opps, there was a problem with the log in."
     redirect '/error'
   end
 end
@@ -73,7 +75,8 @@ post '/up' do
   puts "****"
   puts params
   puts "****"
-  User.create do |u|
+  
+  user = User.create do |u|
     u.fname = params[:user][:fname]
     u.lname = params[:user][:lname]
     u.username = params[:user][:username]
@@ -81,8 +84,11 @@ post '/up' do
     u.password = params[:user][:password]
     u.location = params[:user][:location]
   end
+
+  session[:user_id] = user.id
   
-  
+  flash[:alert] = "Welcome, new user!"
+  redirect '/home'
 end
 
 post '/sign_out' do
@@ -94,7 +100,7 @@ post '/sign_out' do
   puts session[:user_id]
   puts "*****"
   flash[:notice] = 'You have successfully signed out!'
-  redirect '/sign_out_confirm'
+  redirect '/error'
 end
 
 
@@ -116,6 +122,8 @@ post '/update' do
   @current_user.account.update_attributes(
     profile_image_url: params[:account][:profile_image_url]
   )
+  flash[:notice] = 'Your updates have been saved!'
+  redirect '/home'
 end
 
 
