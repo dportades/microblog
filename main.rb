@@ -117,5 +117,3 @@ post '/update' do
     profile_image_url: params[:account][:profile_image_url]
   )
 end
-
-
