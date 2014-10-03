@@ -10,7 +10,8 @@
 	</nav>
 
 	<div class="main_profile">
-	<img src="../images/placeholder.png" align="left">
+
+  <img src="<%= @current_user.account.profile_image_url %>" align="left">
 	<h4><%= @current_user.username %></h4>
 	<ul>
 	<li># Posts</li>
@@ -46,7 +47,7 @@
 
 <div class="media_box">
   <form method="POST" action="/blogposts">
-    <textarea name="[post]blog_post" placeholder="Compose new blog post..." class="submit_post"></textarea>
+    <textarea name="[post]blog_media_url" placeholder="Insert media link..." class="submit_post"></textarea>
     <br />
     <input type="submit" class="submit_post_btn">
   </form>
@@ -55,6 +56,7 @@
 <div class="blog_feed">
 	<% @current_user.posts.each do |blogpost| %>
 	<%= blogpost.blog_post %>
+  <img src="<%= blogpost.blog_media_url %>">
 	<% end %>
 </div>
 
