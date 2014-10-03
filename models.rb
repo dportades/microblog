@@ -11,3 +11,4 @@ class Post < ActiveRecord::Base
 	belongs_to :user
 end
 
+# move methods over to this file
