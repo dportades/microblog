@@ -61,15 +61,25 @@ ul li img {
 	padding:20px;
 }
 
-.main_profile form {
-	margin: 0 0 20px 20px;
-	float:left;
-	width:350px;
+.post_media img {
+	width:25px;
+	height:25px;
+	margin:0 5px 0 5px;
+	display:inline;
 }
 
-.profile_feed {
-	background-color:black;
-	width:60%;
-	height:600px;
-	float:left;
+.post_box {
+	width:100%;
+	display:inline;
+}
+
+.submit_post_btn {
+  color: #fff;
+  background-color: #000;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 3px;
+  border: none;
+  padding: 10px;
+  display:inline;
 }

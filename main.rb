@@ -126,3 +126,17 @@ post '/update' do
   flash[:notice] = 'Your updates have been saved!'
   redirect '/home'
 end
+
+
+post "/blogposts" do
+  puts "****"
+  puts params
+  puts "****"
+  
+  @blog_post = Post.create do |p|
+    p.blog_post = params[:post][:blog_post]
+    p.blog_media_url = params[:post][:blog_media_url]
+  end
+
+  @current_user << @blog_post
+end

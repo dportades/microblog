@@ -17,12 +17,30 @@
 	<li># Followers</li>
 	<li># Following</li>
 	</ul>
+	</div>
 	
-	<form action="/" method="post">
-	<input type="text" name="" value="" class="input_box" placeholder="Compose new blog post..." />
-	<input type="submit" value="Post" class="submit_btn">
-	</form>
-	</div>
+<!-- 	<div class="profile_feed">
+		<form action="/" method="post">
+			<input type="text" name="" value="" class="input_box" placeholder="Compose new blog post..." />
+			<input type="submit" value="Post" class="submit_btn">
+			<input type="image" src="../images/text.png" width="25px" height="25px">
+			<input type="image" width="25px" height="25px" src="../images/media.png">
+		</form>
+	</div> -->
 
-	<div class="profile_feed">
-	</div>
+<div class="input_blog">
+  <div class="post_media">
+  <a href="#" class="text_btn">
+  <img src="../images/text.png"></a>
+  <a href="#" class="media_btn">
+  <img src="../images/media.png"></a>
+  </div>
+
+<div class="post_box">
+  <form method="POST" action="/blogposts">
+    <textarea name="[post]blog_post" placeholder="Compose new blog post..." class="submit_post"></textarea>
+    <input type="submit" class="submit_post_btn">
+  </form>
+</div>
+</div>
+
