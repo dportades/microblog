@@ -23,7 +23,6 @@
 }
 
 .sign_in_box {
-  border: 1px solid tomato;
   width: 25%;
   display: none;
   float: right;
@@ -32,10 +31,6 @@
 
 .sign_in_input {
   width: 100%;
-}
-
-.sign_up_box {
-  border: 1px solid tomato;
 }
 
 .sign_in_link {
