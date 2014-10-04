@@ -23,11 +23,23 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.4)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     i18n (0.6.11)
     json (1.8.1)
     method_source (0.8.2)
+    mime-types (2.3)
     minitest (5.4.2)
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
+    paperclip-rack (0.0.2)
+      paperclip (>= 3.0)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -55,6 +67,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  paperclip-rack
   pry
   rack-flash3!
   rake
