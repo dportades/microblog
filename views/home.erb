@@ -1,80 +1,55 @@
-	<nav>
-	<ul>
-		<li><a href="/home"><img src="../images/home.png"></a> | </li>
-		<li><a href="/profile"><img src="../images/user1.png"></a> | </li>
-		<li><a href="/settings"><img src="../images/settings.png"></a> | </li>
-		<li><form method="post" action="/sign_out">
-  		<input type="submit" value="Sign Out" id="signout">
-		</form></li>
-	</ul>
-	</nav>
+  <nav>
 
-	<h1><%= flash[:notice] %></h1>
-	<h1><%= flash[:alert] %></h1>
+
+  <ul>
+    <li><a href="/home"><img src="../images/home.png"></a> | </li>
+    <li><a href="/profile"><img src="../images/user1.png"></a> | </li>
+    <li><a href="/settings"><img src="../images/settings.png"></a> | </li>
+    <li><form method="post" action="/sign_out">
+      <input type="submit" value="Sign Out" id="signout">
+    </form></li>
+  </ul>
+  </nav>
+
+  <h1><%= flash[:notice] %></h1>
+  <h1><%= flash[:alert] %></h1>
 
 <div class="homepage">
-	<div class="homepage_all_users">
-		
-		<% if @current_user.relationships.count >= 1 %>
-			<%= User.find(@current_user.relationships[0].followed_id).username %>
-			<%= User.find(@current_user.relationships[1].followed_id).username %>
-			<p>Total Followers: <%= @current_user.relationships.count%> </p>
-		<% else %>
-			<p>You currently have no friends.</p>
-		<% end %>
+  <div class="homepage_all_users">
 
-		<!-- list of other users -->
+    <% if @current_user.followeds.count > 0 %>
+      <ul>
+        <% @current_user.followeds.each do |fol| %>
+          <li><%= fol.username %></li>
+        <% end %>
+      </ul>
 
-		
-		<h3 class="homepage_display_name"><%=User.find(1).username %></h3>
-		<br />
-		<img class="homepage_image" src="<%= User.find(1).account.profile_image_url %>">
-		<br />
-		<form method="post" action="/follow">
-			<input type="submit" value="Follow Me" class="follow_btn">
-		</form>
+      <p>Total people you are following: <%= @current_user.followeds.count %></p>
+    <% else %>
+      <p>You currently have no friends.</p>
+    <% end %>
+
+    <!-- list of other users -->
 
 
-		<br>
-
-		<h3 class="homepage_display_name"><%=User.find(2).username %></h3>
-		<br />
-		<img class="homepage_image" src="<%= User.find(2).account.profile_image_url %>">
-		<br />
-		<form method="post" action="/follow">
-			<input type="submit" value="Follow Me" class="follow_btn">
-		</form>
+    <h3 class="homepage_display_name"><%=User.find(26).username %></h3>
+    <br />
+    <img class="homepage_image" src="<%= User.find(26).account.profile_image_url %>">
+    <br />
+    <form method="post" action="/follow">
+      <input type="submit" value="Follow Me" class="follow_btn">
+    </form>
 
 
-		<br>
+    <br>
 
-		<h3 class="homepage_display_name"><%=User.find(3).username %></h3>
-		<br />
-		<img class="homepage_image" src="<%= User.find(3).account.profile_image_url %>">
-		<br />
-		<form method="post" action="/follow">
-			<input type="submit" value="Follow Me" class="follow_btn">
-		</form>
-
-
-		<br>
-
-		<h3 class="homepage_display_name"><%=User.find(4).username %></h3>
-		<br />
-		<img class="homepage_image" src="<%= User.find(4).account.profile_image_url %>">
-		<br />
-		<form method="post" action="/follow">
-			<input type="submit" value="Follow Me" class="follow_btn">
-		</form>
-
-
-	</div>
+  </div>
 
 
 
-	<div class="homepage_all_posts">
-	<p>hello</p>
+  <div class="homepage_all_posts">
+  <p>hello</p>
 
-	</div>
+  </div>
 
 </div>
