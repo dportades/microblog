@@ -22,7 +22,7 @@ user_4 = User.create do |u|
   u.password = 'julie'
 end
 
-Relationship.create(follower_id: user_1.id, followed_id: user_2.id)
-Relationship.create(follower_id: user_1.id, followed_id: user_3.id)
-Relationship.create(follower_id: user_1.id, followed_id: user_4.id)
 binding.pry
+user_2.follow(user_3.id)
+user_2.follow(user_4.id)
+user_2.follow(user_1.id)

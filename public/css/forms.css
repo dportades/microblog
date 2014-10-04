@@ -128,3 +128,13 @@
   right:0;
   vertical-align: top;
 }
+
+.users_div {
+  border: 1px solid #000;
+}
+
+.users_img {
+  width:150px;
+  height:150px;
+  margin:0 auto;
+}

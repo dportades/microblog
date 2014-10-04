@@ -1,44 +1,51 @@
-  <nav>
-
-
+<nav>
   <ul>
     <li><a href="/home"><img src="../images/home.png"></a> | </li>
     <li><a href="/profile"><img src="../images/user1.png"></a> | </li>
     <li><a href="/settings"><img src="../images/settings.png"></a> | </li>
-    <li><form method="post" action="/sign_out">
-      <input type="submit" value="Sign Out" id="signout">
-    </form></li>
+    <li>
+      <form method="post" action="/sign_out">
+        <input type="submit" value="Sign Out" id="signout">
+      </form>
+    </li>
   </ul>
-  </nav>
+</nav>
 
-  <h1><%= flash[:notice] %></h1>
-  <h1><%= flash[:alert] %></h1>
+<h1><%= flash[:notice] %></h1>
+<h1><%= flash[:alert] %></h1>
 
 <div class="homepage">
   <div class="homepage_all_users">
 
-    <% if @current_user.followeds.count > 0 %>
+    <% if @current_user.friends.count > 0 %>
       <ul>
-        <% @current_user.followeds.each do |fol| %>
-          <li><%= fol.username %></li>
+        <% @current_user.friends.each do |friend| %>
+          <li class="homepage_display_name"><%= friend.username %></li>
         <% end %>
       </ul>
 
-      <p>Total people you are following: <%= @current_user.followeds.count %></p>
+      <p>Total people you are following: <%= @current_user.friends.count %></p>
     <% else %>
       <p>You currently have no friends.</p>
     <% end %>
 
-    <!-- list of other users -->
+    <!-- list of all users -->
+  <ul>
+    <% User.all.each do |u| %>
+    <div class="users_div">
+      <li><img src="<%= u.account.profile_image_url %>" align="left" class="users_img"></li>
+      <li><%= u.username %></li>
+      <li><form method="post" action="/follow">
+        <input type="submit" value="Follow Me" class="follow_btn">
+      </form></li>
+      </li>
+    </div>
+    <% end %>
+  </ul>
 
 
-    <h3 class="homepage_display_name"><%=User.find(26).username %></h3>
-    <br />
-    <img class="homepage_image" src="<%= User.find(26).account.profile_image_url %>">
-    <br />
-    <form method="post" action="/follow">
-      <input type="submit" value="Follow Me" class="follow_btn">
-    </form>
+<!--     <img class="homepage_image" src="friends.account.profile_image_url">
+ -->  
 
 
     <br>

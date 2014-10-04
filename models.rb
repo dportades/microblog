@@ -7,6 +7,11 @@ class User < ActiveRecord::Base
 
   has_many :followings, class_name: "Relationship", foreign_key: :followed_id, dependent: :destroy
   has_many :followers, through: :followings
+
+  def follow(followed_id)
+    Relationship.create(follower_id: id, followed_id: followed_id)
+  end
+
 end
 
 class Account < ActiveRecord::Base
