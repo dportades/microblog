@@ -96,8 +96,9 @@
 }
 
 .homepage_image {
-  width:125px;
-  height:125px;
+  width:150px;
+  height:150px;
+  margin:0 auto;
 }
 
 .follow_btn {
@@ -120,21 +121,22 @@
 
 
 .homepage_all_posts {
-  background-color: #000;
+  /*background-color: #000;*/
+  border: 1px solid #000;
   width:70%;
   display:inline-block;
-  margin:20px;
-  text-align: center;
-  right:0;
-  vertical-align: top;
+  /*margin:20px;*/
+  /*text-align: center;*/
+/*  right:0;
+*/  vertical-align: top;
+  /*color: #fff;*/
 }
 
 .users_div {
   border: 1px solid #000;
 }
 
-.users_img {
-  width:150px;
-  height:150px;
-  margin:0 auto;
+.homepage_all_posts .users_div {
+  width: 70%;
 }
+

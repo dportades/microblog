@@ -16,47 +16,36 @@
 
 <div class="homepage">
   <div class="homepage_all_users">
+    <h4>Other users you can follow:</h4>
+    <ul>
+      <% User.all.each do |u| %>
+      <div class="users_div">
+        <li><img src="<%= u.account.profile_image_url %>" class="homepage_image"></li>
+        <li><%= u.username %></li>
+        <li><form method="post" action="/follow">
+          <input type="submit" value="Follow Me" class="follow_btn">
+        </form></li>
+        </li>
+      </div>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="homepage_all_posts">
 
     <% if @current_user.friends.count > 0 %>
       <ul>
         <% @current_user.friends.each do |friend| %>
-          <li class="homepage_display_name"><%= friend.username %></li>
+          <div class="users_div">
+            <li><%= friend.posts[0].blog_post %></li>
+            <li class="homepage_display_name"><%= friend.username %></li>
+            <li><img class="homepage_image" src="<%= friend.account.profile_image_url %>"></li>
+          </div>
         <% end %>
       </ul>
-
-      <p>Total people you are following: <%= @current_user.friends.count %></p>
     <% else %>
-      <p>You currently have no friends.</p>
+      <h4>Find users to follow... check out the list of users on the left!</h4>
     <% end %>
 
-    <!-- list of all users -->
-  <ul>
-    <% User.all.each do |u| %>
-    <div class="users_div">
-      <li><img src="<%= u.account.profile_image_url %>" align="left" class="users_img"></li>
-      <li><%= u.username %></li>
-      <li><form method="post" action="/follow">
-        <input type="submit" value="Follow Me" class="follow_btn">
-      </form></li>
-      </li>
-    </div>
-    <% end %>
-  </ul>
-
-
-<!--     <img class="homepage_image" src="friends.account.profile_image_url">
- -->  
-
-
-    <br>
-
   </div>
-
-
-
-  <div class="homepage_all_posts">
-  <p>hello</p>
-
-  </div>
-
 </div>
