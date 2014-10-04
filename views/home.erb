@@ -53,13 +53,13 @@
       <ul>
         <% @current_user.friends.each do |friend| %>
           <div class="users_div">
-            <li class="homepage_display_name"><%= friend.username %></li>
+            <li><%= friend.username %></li>
             <li><img class="homepage_image" src="<%= friend.account.profile_image_url %>"></li>
           </div>
         <% end %>
       </ul>
     <% else %>
-      <h4>You're currently not following anyone ... check out our recent bloggers to find friends!</h4>
+      <h4>You're currently not following anyone ... checkout our recent bloggers to find friends!</h4>
     <% end %>
 
   </div>

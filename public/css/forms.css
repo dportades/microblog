@@ -92,7 +92,7 @@
 }
 
 .homepage_display_name {
-  margin-bottom: -10px;
+  
 }
 
 .homepage_image {
@@ -105,9 +105,9 @@
   color: #fff;
   background-color: #000;
   border-radius: 5px;
-  height: 40px;
-  width: 100px;
+  height: 30px;
   border: none;
+  margin-bottom: 5px;
 }
 
 .follow_btn:hover {
@@ -120,34 +120,28 @@
 }
 
 
-.homepage_all_posts {
-  /*background-color: #000;*/
-  border: 1px solid #000;
-  width:70%;
-  display:inline-block;
-  /*margin:20px;*/
-  /*text-align: center;*/
-/*  right:0;
-*/  vertical-align: top;
-  /*color: #fff;*/
-}
-
 .users_div {
   border: 1px solid #000;
 }
 
-.homepage_all_posts .users_div {
+.users_div {
   width: 70%;
 }
 
 .recent_posts {
   border: 2px solid #000;
+  border-radius: 4px;
   margin-bottom: 20px;
   display: block;
 }
 
+.recent_posts p{
+  margin-bottom: 0px;
+}
+
 .small_profile_img {
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 66px;
+  padding-bottom: 0px;
 }
 
