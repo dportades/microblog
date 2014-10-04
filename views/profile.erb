@@ -16,7 +16,7 @@
     <h4><%= @current_user.username %></h4>
     <ul>
       <li><%= @current_user.posts.count %> Posts</li>
-      <li><%= @current_user.relationships.count %> Friends</li>
+      <li><%= @current_user.friends.count %> Friends</li>
     </ul>
   </div>
 <!-- INPUT FORM -->
@@ -53,9 +53,9 @@
     <ul>
       <% @current_user.posts.each do |blogpost| %>
       <% if blogpost.blog_post %>
-          <li><%= blogpost.blog_post %></li>
+          <div><%= blogpost.blog_post %></div>
         <% else %>
-          <li><img src="<%= blogpost.blog_media_url %>"></li>
+          <div><img src="<%= blogpost.blog_media_url %>"></div>
         <% end %>
       <% end %>
     </ul>

@@ -55,6 +55,7 @@ end
 
 get '/error' do
   erb :error
+
 end
 
 
@@ -91,7 +92,7 @@ post '/up' do
 
   session[:user_id] = user.id
   
-  flash[:alert] = "Welcome, new user!"
+  flash[:alert] = "Welcome, #{user.fname}!"
   redirect '/home'
 end
 
