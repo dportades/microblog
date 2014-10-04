@@ -1,66 +1,65 @@
-	<nav>
-	<ul>
-		<li><a href="/home"><img src="../images/home.png"></a> | </li>
-		<li><a href="/profile"><img src="../images/user1.png"></a> | </li>
-		<li><a href="/settings"><img src="../images/settings.png"></a> | </li>
-		<li><form method="post" action="/sign_out">
+<nav>
+  <ul>
+  	<li><a href="/home"><img src="../images/home.png"></a> | </li>
+  	<li><a href="/profile"><img src="../images/user1.png"></a> | </li>
+  	<li><a href="/settings"><img src="../images/settings.png"></a> | </li>
+  	<li><form method="post" action="/sign_out">
   		<input type="submit" value="Sign Out" id="signout">
-		</form></li>
-	</ul>
-	</nav>
+  	</form></li>
+  </ul>
+</nav>
 
 <div class="profile_wrapper">
-<div class="left">
-  <div class="main_profile">
-    <img src="<%= @current_user.account.profile_image_url %>" align="left">
-    <h4><%= @current_user.username %></h4>
-    <ul>
-      <li><%= @current_user.posts.count %> Posts</li>
-      <li><%= @current_user.friends.count %> Friends</li>
-    </ul>
-  </div>
+
+  <div class="left">
+    <div class="main_profile">
+      <img src="<%= @current_user.account.profile_image_url %>" align="left">
+      <h4><%= @current_user.username %></h4>
+      <ul>
+        <li><%= @current_user.posts.count %> Posts</li>
+        <li><%= @current_user.friends.count %> Friends</li>
+      </ul>
+    </div>
 <!-- INPUT FORM -->
-  <div class="input_blog">
-    <div class="post_media">
-      <a href="#" class="text_btn">
-      <img src="../images/text.png">Create a blog post</a>
-      <a href="#" class="media_btn">
-      <img src="../images/media.png">Post a picture</a>
-    </div>
+    <div class="input_blog">
+      <div class="post_media">
+        <a href="#" class="text_btn">
+        <img src="../images/text.png">Create a blog post</a>
+        <a href="#" class="media_btn">
+        <img src="../images/media.png">Post a picture</a>
+      </div>
 
-    <div class="post_box" >
-      <form method="POST" action="/blogposts">
-        <textarea name="[post]blog_post" placeholder="Compose new blog post..." class="submit_post"></textarea>
-        <br/>
-        <input type="submit" class="submit_post_btn">
-      </form>
-    </div>
+      <div class="post_box" >
+        <form method="POST" action="/blogposts">
+          <textarea name="[post]blog_post" placeholder="Compose new blog post..." class="submit_post"></textarea>
+          <br/>
+          <input type="submit" class="submit_post_btn">
+        </form>
+      </div>
 
-    <div class="media_box"  style="display:none">
-      <form method="POST" action="/blogposts">
-        <textarea name="[post]blog_media_url" placeholder="Insert media link..." class="submit_post"></textarea>
-        <input type="submit" class="submit_post_btn">
-      </form>
+      <div class="media_box"  style="display:none">
+        <form method="POST" action="/blogposts">
+          <textarea name="[post]blog_media_url" placeholder="Insert media link..." class="submit_post"></textarea>
+          <input type="submit" class="submit_post_btn">
+        </form>
+      </div>
     </div>
   </div>
-</div>
-
-
 
 <!-- BLOG FEED -->
-<div class="right">
-  <div class="blog_feed">
-    <ul>
-      <% @current_user.posts.each do |blogpost| %>
-      <% if blogpost.blog_post %>
-          <div><%= blogpost.blog_post %></div>
-        <% else %>
-          <div><img src="<%= blogpost.blog_media_url %>"></div>
+  <div class="right">
+    <div class="blog_feed">
+      <ul>
+        <% @current_user.posts.each do |blogpost| %>
+          <% if blogpost.blog_post %>
+            <div><%= blogpost.blog_post %></div>
+          <% else %>
+            <div><img src="<%= blogpost.blog_media_url %>"></div>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
   </div>
-</div>
 </div>
 
 

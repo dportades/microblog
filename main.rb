@@ -24,7 +24,7 @@ get '/' do
   set_current_user
   if @current_user
     redirect '/home'
-  else 
+  else
      erb :index
   end
 end
@@ -35,7 +35,7 @@ end
 
 get '/home' do
   set_current_user
-  # @user = User.all
+  @first_10_ordered_posts = Post.order(:blog_post_date).first(10)
   erb :home
 end
 
@@ -80,7 +80,7 @@ post '/up' do
   puts "****"
   puts params
   puts "****"
-  
+
   user = User.create do |u|
     u.fname = params[:user][:fname]
     u.lname = params[:user][:lname]
@@ -91,7 +91,7 @@ post '/up' do
   end
 
   session[:user_id] = user.id
-  
+
   flash[:alert] = "Welcome, #{user.fname}!"
   redirect '/home'
 end
@@ -137,7 +137,7 @@ post "/blogposts" do
   puts "****"
   puts params
   puts "****"
-  
+
   blogpost = Post.create do |p|
     p.blog_post = params[:post][:blog_post]
     p.blog_media_url = params[:post][:blog_media_url]

@@ -3,49 +3,104 @@
     <li><a href="/home"><img src="../images/home.png"></a> | </li>
     <li><a href="/profile"><img src="../images/user1.png"></a> | </li>
     <li><a href="/settings"><img src="../images/settings.png"></a> | </li>
-    <li>
-      <form method="post" action="/sign_out">
-        <input type="submit" value="Sign Out" id="signout">
-      </form>
-    </li>
+    <li><form method="post" action="/sign_out">
+      <input type="submit" value="Sign Out" id="signout">
+    </form></li>
   </ul>
 </nav>
 
 <h1><%= flash[:notice] %></h1>
 <h1><%= flash[:alert] %></h1>
 
-<div class="homepage">
-  <div class="homepage_all_users">
-    <h4>Other users you can follow:</h4>
-    <ul>
-      <% User.all.each do |u| %>
-      <div class="users_div">
-        <li><img src="<%= u.account.profile_image_url %>" class="homepage_image"></li>
-        <li><%= u.username %></li>
-        <li><form method="post" action="/follow">
-          <input type="submit" value="Follow Me" class="follow_btn">
-        </form></li>
-        </li>
+<div class="profile_wrapper">
+
+  <div class="left">
+    <div class="main_profile">
+      <img src="<%= @current_user.account.profile_image_url %>" align="left">
+      <h4><%= @current_user.username %></h4>
+      <ul>
+        <li><%= @current_user.posts.count %> Posts</li>
+        <li><%= @current_user.friends.count %> Friends</li>
+      </ul>
+    </div>
+<!-- INPUT FORM -->
+    <div class="input_blog">
+      <div class="post_media">
+        <a href="#" class="text_btn">
+        <img src="../images/text.png">Create a blog post</a>
+        <a href="#" class="media_btn">
+        <img src="../images/media.png">Post a picture</a>
       </div>
-      <% end %>
-    </ul>
-  </div>
 
-  <div class="homepage_all_posts">
+      <div class="post_box" >
+        <form method="POST" action="/blogposts">
+          <textarea name="[post]blog_post" placeholder="Compose new blog post..." class="submit_post"></textarea>
+          <br/>
+          <input type="submit" class="submit_post_btn">
+        </form>
+      </div>
 
+      <div class="media_box"  style="display:none">
+        <form method="POST" action="/blogposts">
+          <textarea name="[post]blog_media_url" placeholder="Insert media link..." class="submit_post"></textarea>
+          <input type="submit" class="submit_post_btn">
+        </form>
+      </div>
+    </div>
+
+    <h4>Friends you are following:</h4>
     <% if @current_user.friends.count > 0 %>
       <ul>
         <% @current_user.friends.each do |friend| %>
           <div class="users_div">
-            <li><%= friend.posts[0].blog_post %></li>
             <li class="homepage_display_name"><%= friend.username %></li>
             <li><img class="homepage_image" src="<%= friend.account.profile_image_url %>"></li>
           </div>
         <% end %>
       </ul>
     <% else %>
-      <h4>Find users to follow... check out the list of users on the left!</h4>
+      <h4>You're currently not following anyone ... check out our recent bloggers to find friends!</h4>
     <% end %>
 
   </div>
+
+<!-- BLOG FEED -->
+  <div class="right">
+    <ul>
+      <% @first_10_ordered_posts.each do |p| %>
+        <% if p.blog_post %>
+
+          <li class="recent_posts">
+            <p><%= p.blog_post %></p>
+            <p><%= p.user.username %></p>
+            <p><img src="<%= p.user.account.profile_image_url %>" class="small_profile_img"></p>
+            <form method="post" action="/follow">
+              <input type="submit" value="Follow Me" class="follow_btn">
+            </form>
+          </li>
+
+        <% elsif p.blog_media_url %>
+          <li class="recent_posts">
+            <p><img src="<%= p.blog_media_url %>"></p>
+            <p><%= p.user.username %></p>
+            <p><img src="<%= p.user.account.profile_image_url %>" class="small_profile_img"></p>
+            <form method="post" action="/follow">
+              <input type="submit" value="Follow Me" class="follow_btn">
+            </form>
+          </li>
+
+        <% else %>
+         
+            <h6>Sorry there are no posts available.</h6>
+        
+        <% end %>
+
+      <% end %>
+    </ul>
+  </div>
+
 </div>
+
+
+
+            
