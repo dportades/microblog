@@ -4,23 +4,7 @@
   text-align: center;
 }
 
-.input_box {
-  height: 40px;
-  width: 60%;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  border: 1px solid #000;
-  text-align: center;
-}
-
-.sign_in_box .input_box {
-  height: 30px;
-  width: 100%;
-  margin-bottom: 5px;
-  border-radius: 5px;
-  text-align: center;
-}
-
+/*BUTTONS*/
 .submit_btn {
   color: #fff;
   background-color: purple;
@@ -63,20 +47,6 @@
   border: none;
 }
 
-.sign_in_box {
-  width: 18%;
-  padding: 10px;
-  background-color: #000;
-  display: none;
-  float: right;
-  text-align: right;
-}
-
-.sign_in_link {
-  text-align: right;
-  padding-top: 10px;
-}
-
 .sign_in_btn {
   color: #fff;
   background-color: #000;
@@ -93,6 +63,54 @@
   background-color: #FF2842;
 }
 
+.follow_btn {
+  color: #fff;
+  background-color: #000;
+  border-radius: 5px;
+  height: 30px;
+  border: none;
+  margin-bottom: 5px;
+}
+
+.follow_btn:hover {
+  background-color: mediumturquoise;
+/*  height: 40px;
+  width: 80px;*/
+}
+
+/*INPUT BOXES*/
+.input_box {
+  height: 40px;
+  width: 60%;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+.sign_in_box .input_box {
+  height: 30px;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.sign_in_box {
+  width: 18%;
+  padding: 10px;
+  background-color: #000;
+  display: none;
+  float: right;
+  text-align: right;
+}
+
+.sign_in_link {
+  text-align: right;
+  padding-top: 10px;
+}
+
+/*HOME PAGE*/
 .homepage {
   margin: 0 auto;
   text-align: center;
@@ -110,21 +128,6 @@
   width:50px;
   height:50px;
   margin:0 auto;
-}
-
-.follow_btn {
-  color: #fff;
-  background-color: #000;
-  border-radius: 5px;
-  height: 30px;
-  border: none;
-  margin-bottom: 5px;
-}
-
-.follow_btn:hover {
-  background-color: mediumturquoise;
-/*  height: 40px;
-  width: 80px;*/
 }
 
 .users_div {
@@ -171,3 +174,4 @@
   width: 120px;
   height: 120px;
 }
+

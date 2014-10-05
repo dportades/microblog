@@ -41,7 +41,7 @@
 
       <div class="media_box"  style="display:none">
         <form method="POST" action="/blogposts">
-          <textarea name="[post]blog_media_url" placeholder="Insert media link..." class="submit_post"></textarea>
+          <textarea name="[post]blog_media_url" placeholder="Insert media link..." class="submit_post" maxlength="150"></textarea>
           <input type="submit" class="submit_post_btn">
         </form>
       </div>
@@ -52,19 +52,30 @@
   <div class="right">
     <div class="blog_feed">
       <ul>
+
         <% @user.posts.each do |blogpost| %>
           <% if blogpost.blog_post %>
-            <div><%= blogpost.blog_post %></div>
-            <div><%= @user.username.capitalize %> <%= blogpost.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
-          <% else %>
-            <div><img src="<%= blogpost.blog_media_url %>"></div>
-            <div><%= @user.username.capitalize %> <%= blogpost.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
+
+            <li class="recent_posts">
+              <div class="post_box">
+                <p><%= blogpost.blog_post %></p>
+                <div><%= @user.username.capitalize %> <%= blogpost.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
+              </div>
+            <% else %>
+              <div class="post_box">
+                <p><img src="<%= blogpost.blog_media_url %>"></p>
+                <div><%= @user.username.capitalize %> <%= blogpost.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
+              </div>
+            </li>
+            <% end %>
           <% end %>
-        <% end %>
       </ul>
     </div>
   </div>
 </div>
+
+
+
 
 <!--delete a post button -->
 

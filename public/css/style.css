@@ -153,7 +153,8 @@ ul li img {
 /* BLOG FEED DIV */
 .blog_feed {
 	width:100%;
-	border:2px solid black;
+	/*border:2px solid black;*/
+  background-color: #FFF1ED;
 	border-radius: 5px;
 	margin: 20px;
   margin-left: 40px;
@@ -161,9 +162,20 @@ ul li img {
 	vertical-align: top;
 }
 
+.post_box {
+  border: 1px solid black;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
 .blog_feed img {
 	width:75%;
 	height:75%;
+}
+
+.blog_feed ul {
+  padding-left: 0px;
+  margin: 20px;
 }
 
 .blog_feed ul li {
