@@ -49,8 +49,8 @@
   color: #fff;
   background-color: limegreen;
   border-radius: 50px;
-  height: 40px;
-  width: 50%;
+/*  height: 40px;
+  width: 50%;*/
   border: none;
 }
 
@@ -58,8 +58,8 @@
   color: #fff;
   background-color: crimson;
   border-radius: 50px;
-  height: 40px;
-  width: 50%;
+/*  height: 40px;
+  width: 50%;*/
   border: none;
 }
 
@@ -123,8 +123,8 @@
 
 .follow_btn:hover {
   background-color: mediumturquoise;
-  height: 40px;
-  width: 80px;
+/*  height: 40px;
+  width: 80px;*/
 }
 
 .users_div {

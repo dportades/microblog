@@ -62,12 +62,13 @@ ul li img {
   border-radius: 3px;
   font-size: 14px;
   text-decoration: none;
+  border:none;
+  padding:5px;
 }
 
 #signout:hover {
-  border: 2px solid #000;
-  color: #000;
-  background-color: #fff;
+  color: #fff;
+  background-color: crimson;
 }
 
 /* MAIN PROFILE DIV */
@@ -143,6 +144,10 @@ ul li img {
   margin-bottom: 20px;
 }
 
+.submit_post_btn:hover {
+  color: #fff;
+  background-color: limegreen;
+}
 
 
 /* BLOG FEED DIV */
