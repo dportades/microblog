@@ -1,4 +1,4 @@
-<div class="blog_header"><h1 class="blog_name">Stay Tuned</h1></div>
+<div class="blog_header"><h1 class="blog_name">STAY TUNED</h1></div>
 <nav>
   <ul>
     <li><a href="/home"><img src="../images/home.png"></a> | </li>
@@ -54,6 +54,7 @@
           <a href="users/<%= friend.id %>">
             <div class="users_div">
               <li><%= friend.username %></li>
+              <br />
               <li><img class="homepage_image" src="<%= friend.account.profile_image_url %>"></li>
             </div>
           </a>
@@ -67,17 +68,25 @@
 
 <!-- BLOG FEED -->
   <div class="right">
+
     <ul>
+
+        <div class="inspiration_box">
+          <h2>DAILY INSPIRATION:</h2>
+          <p><iframe width="480" height="305" src="//www.youtube.com/embed/GaoLU6zKaws" frameborder="0" allowfullscreen></iframe></p>
+        </div>
+
+
       <% @first_10_ordered_posts.each do |p| %>
         <% if p.blog_post %>
 
           <li class="recent_posts">
-            <p><%= p.blog_post %></p>
-            <p><%= p.user.username %></p>
+            <p><strong><%= p.user.username %></strong></p>
             <p><img src="<%= p.user.account.profile_image_url %>" class="small_profile_img"></p>
             <form method="post" action="/follow">
               <input type="submit" value="Follow Me" class="follow_btn">
             </form>
+            <p><%= p.blog_post %></p>
           </li>
 
         <% elsif p.blog_media_url %>
