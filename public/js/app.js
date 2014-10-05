@@ -7,7 +7,6 @@ $(document).ready(function(){
   $(".text_btn").click(function(){
     $(".post_box").show();
     $(".media_box").hide();
-
   });
 
   $(".media_btn").click(function(){
@@ -20,5 +19,10 @@ $(document).ready(function(){
         height: ($(this).height()==40) ? 100 : 40
     });
   });
+
+  $(".sub_title").click(function(){
+    $(".friends_list").toggle("slow");
+  });
+
 });
 

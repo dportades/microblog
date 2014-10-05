@@ -47,22 +47,23 @@
         </form>
       </div>
 
-      <h3>Friends you are following:</h3>
-      <% if @current_user.friends.count > 0 %>
-        <ul>
-        <% @current_user.friends.each do |friend| %>
-          <a href="users/<%= friend.id %>">
-            <div class="users_div">
-              <li><%= friend.username %></li>
-              <br />
-              <li><img class="homepage_image" src="<%= friend.account.profile_image_url %>"></li>
-            </div>
-          </a>
+      <h3 class="sub_title">Friends you are following<span><i class="fa fa-arrow-circle-down"></i></span></h3>
+      <div class="friends_list">
+        <% if @current_user.friends.count > 0 %>
+          <ul>
+          <% @current_user.friends.each do |friend| %>
+            <a href="users/<%= friend.id %>">
+              <div class="users_div">
+                <li><img class="homepage_image" src="<%= friend.account.profile_image_url %>"></li>
+                <li class="friend_name"><%= friend.username %><br><span class="location"><%= friend.location %></span></li>
+              </div>
+            </a>
+          <% end %>
+          </ul>
+        <% else %>
+          <h4>You're currently not following anyone ... checkout our recent bloggers to find friends!</h4>
         <% end %>
-        </ul>
-      <% else %>
-        <h4>You're currently not following anyone ... checkout our recent bloggers to find friends!</h4>
-      <% end %>
+      </div>
     </div>
   </div>
 
@@ -70,16 +71,14 @@
   <div class="right">
 
     <ul>
+      <div class="inspiration_box">
+        <h2>DAILY INSPIRATION:</h2>
+        <p><iframe width="480" height="305" src="//www.youtube.com/embed/GaoLU6zKaws" frameborder="0" allowfullscreen></iframe></p>
+      </div>
 
-        <div class="inspiration_box">
-          <h2>DAILY INSPIRATION:</h2>
-          <p><iframe width="480" height="305" src="//www.youtube.com/embed/GaoLU6zKaws" frameborder="0" allowfullscreen></iframe></p>
-        </div>
-
-
+      <h3>MOST RECENT POSTS:</h3>
       <% @last_10_ordered_posts.each do |p| %>
         <% if p.blog_post %>
-
           <li class="recent_posts">
             <div class="feed_left">
               <p><strong><%= p.user.username %></strong></p>
@@ -110,10 +109,7 @@
               <div><%= p.user.username.capitalize %> <%= p.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
             </div>
           </li>
-        <% else %>
-            <h6>Sorry there are no posts available.</h6>
         <% end %>
-
       <% end %>
     </ul>
   </div>
