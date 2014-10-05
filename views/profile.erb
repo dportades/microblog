@@ -15,7 +15,7 @@
   <div class="left">
     <div class="main_profile">
       <img src="<%= @user.account.profile_image_url %>" align="left">
-      <h4><%= @user.username %></h4>
+      <h4><%= @user.username.capitalize %></h4>
       <ul>
         <li><%= @user.posts.count %> Posts</li>
         <li><%= @user.friends.count %> Friends</li>
@@ -32,7 +32,7 @@
 
       <div class="post_box" >
         <form method="POST" action="/blogposts">
-          <textarea name="[post]blog_post" placeholder="Compose new blog post..." class="submit_post"></textarea>
+          <textarea name="[post]blog_post" placeholder="Compose new blog post..." class="submit_post" maxlength="150"></textarea>
           <br/>
           <input type="submit" class="submit_post_btn">
         </form>
@@ -54,13 +54,17 @@
         <% @user.posts.each do |blogpost| %>
           <% if blogpost.blog_post %>
             <div><%= blogpost.blog_post %></div>
+            <div><%= @user.username.capitalize %> <%= blogpost.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
           <% else %>
             <div><img src="<%= blogpost.blog_media_url %>"></div>
+            <div><%= @user.username.capitalize %> <%= blogpost.blog_post_date.strftime("tuned in %m/%d/%Y at %I:%M%p") %></div>
           <% end %>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
+
+<!--delete a post button -->
 
 
