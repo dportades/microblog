@@ -93,102 +93,102 @@ end
 
 acct_1 = Account.create do |a|
   a.profile_image_url = "http://www.glamour.com/images/entertainment/2013/03/mindy-kaling-cover-square-w352.jpg"
-  a.user_id = 90
+  a.user_id = user_1.id
 end
 
 acct_2 = Account.create do |a|
   a.profile_image_url = "http://www.snappynewday.com/wp-content/gallery/Rogers/fred-rogers-4715.jpg"
-  a.user_id = 91
+  a.user_id = user_2.id
 end
 
 acct_3 = Account.create do |a|
   a.profile_image_url = "http://i4.mirror.co.uk/incoming/article1333925.ece/alternates/s615/The%20Hobbit%20An%20Unexpected%20Journey"
-  a.user_id = 92
+  a.user_id = user_3.id
 end
 
 acct_4 = Account.create do |a|
   a.profile_image_url ="http://img1.wikia.nocookie.net/__cb20130902151852/gameofthrones/de/images/5/52/Profil-Hodor-1.jpg"
-  a.user_id = 93
+  a.user_id = user_4.id
 end
 
 acct_5 = Account.create do |a|
   a.profile_image_url = "http://static.comicvine.com/uploads/scale_super/10/103176/2514391-354955135_f1245a6470_371x414.jpg"
-  a.user_id = 94
+  a.user_id = user_5.id
 end
 
 acct_6 = Account.create do |a|
   a.profile_image_url = "http://www.fandomisinthedetails.com/uploads/1/9/2/0/19201953/9606121_orig.jpg?324"
-  a.user_id = 95
+  a.user_id = user_6.id
 end
 
 acct_7 = Account.create do |a|
   a.profile_image_url = "http://img2.wikia.nocookie.net/__cb20140227094826/house-of-cards/images/d/df/Frank_Underwood_3.jpg"
-  a.user_id = 96
+  a.user_id = user_7.id
 end
 
 acct_8 = Account.create do |a|
   a.profile_image_url = "http://cdn.breitbart.com/mediaserver/Breitbart/Big-Hollywood/2013/01/18/girls-conservatives/Girls%20Season%202.jpg"
-  a.user_id = 97
+  a.user_id = user_8.id
 end
 
 acct_9 = Account.create do |a|
   a.profile_image_url = "http://hollywood-treatment.com/blog/img/2012/02/Zooey-Deschanel.jpg"
-  a.user_id = 98
+  a.user_id = user_9.id
 end
 
 acct_10 = Account.create do |a|
   a.profile_image_url = "http://www.funnelholic.com/wp-content/uploads/2014/07/Ari-Gold.jpg"
-  a.user_id = 99
+  a.user_id = user_10.id
 end
 
 # -------- test post---------------
 post_1 = Post.create do |p|
-  p.user_id = 90
+  p.user_id = user_1.id
   p.blog_post = "Hi there, it's Mindy!"
 end
 
 post_2 = Post.create do |p|
-  p.user_id = 91
+  p.user_id = user_2.id
   p.blog_post = "It's a beautiful day in the neighborhood."
 end
 
 post_3 = Post.create do |p|
-  p.user_id = 92
+  p.user_id = user_3.id
   p.blog_media_url = "http://wallalay.com/wp-content/uploads/2014/02/Martin-Freeman-35.jpg"
 end
 
 post_4 = Post.create do |p|
-  p.user_id = 93
+  p.user_id = user_4.id
   p.blog_post = "Hodor Hodor Hodor Hodor Hodor."
 end
 
 post_5 = Post.create do |p|
-  p.user_id = 94
+  p.user_id = user_5.id
   p.blog_media_url = "http://www.bluntbit.com/wp-content/uploads/2013/12/original-hipster.jpg"
 end
 
 post_6 = Post.create do |p|
-  p.user_id = 95
+  p.user_id = user_6.id
   p.blog_media_url = "http://uproxx.files.wordpress.com/2014/06/piper-pimp-2.gif?w=650&h=650"
 end
 
 post_7 = Post.create do |p|
-  p.user_id = 96
+  p.user_id = user_7.id
   p.blog_post = "That's how you devour a whale. One bite at a time."
 end
 
 post_8 = Post.create do |p|
-  p.user_id = 97
+  p.user_id = user_8.id
   p.blog_media_url = "http://ecochainofdating.com/blog/wp-content/uploads/2013/03/tumblr_new-Lena-Picture-March-18qbbcqko1_500.gif"
 end
 
 post_9 = Post.create do |p|
-  p.user_id = 98
+  p.user_id = user_9.id
   p.blog_post = "Only you know what you can do and can’t do."
 end
 
 post_10 = Post.create do |p|
-  p.user_id = 99
+  p.user_id = user_10.id
   p.blog_post = "Enjoy life, what else."
 end
 
