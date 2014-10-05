@@ -77,13 +77,14 @@
         </div>
 
 
-      <% @first_10_ordered_posts.each do |p| %>
+      <% @last_10_ordered_posts.each do |p| %>
         <% if p.blog_post %>
 
           <li class="recent_posts">
             <p><strong><%= p.user.username %></strong></p>
             <p><img src="<%= p.user.account.profile_image_url %>" class="small_profile_img"></p>
             <form method="post" action="/follow">
+              <input type="hidden" name="user_id" value="<%= p.user.id %>">
               <input type="submit" value="Follow Me" class="follow_btn">
             </form>
             <p><%= p.blog_post %></p>
@@ -95,6 +96,7 @@
             <p><%= p.user.username %></p>
             <p><img src="<%= p.user.account.profile_image_url %>" class="small_profile_img"></p>
             <form method="post" action="/follow">
+              <input type="hidden" name="user_id" value="<%= p.user.id %>">
               <input type="submit" value="Follow Me" class="follow_btn">
             </form>
           </li>

@@ -35,7 +35,7 @@ end
 
 get '/home' do
   set_current_user
-  @first_10_ordered_posts = Post.order(:blog_post_date).first(10)
+  @last_10_ordered_posts = Post.order(:blog_post_date).last(10)
   erb :home
 end
 
@@ -166,8 +166,10 @@ post "/blogposts" do
   redirect "/profile"
 end
 
-# post '/follow' do
-#   follow(followed_id)
-# end
-
+post '/follow' do
+  set_current_user
+  @current_user.follow(params[:user_id])
+  flash[:notice] = "You've got a new friend!"
+  redirect "/users/#{params[:user_id]}"
+end
 

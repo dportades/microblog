@@ -11,6 +11,7 @@
 </nav>
 
 <div class="profile_wrapper">
+<h1><%= flash[:notice] %></h1>
 
   <div class="left">
     <div class="main_profile">
@@ -57,7 +58,7 @@
             <div><%= @user.username.capitalize %> <%= blogpost.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
           <% else %>
             <div><img src="<%= blogpost.blog_media_url %>"></div>
-            <div><%= @user.username.capitalize %> <%= blogpost.blog_post_date.strftime("tuned in %m/%d/%Y at %I:%M%p") %></div>
+            <div><%= @user.username.capitalize %> <%= blogpost.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
           <% end %>
         <% end %>
       </ul>
