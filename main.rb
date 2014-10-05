@@ -36,6 +36,7 @@ end
 get '/home' do
   set_current_user
   @last_10_ordered_posts = Post.order(:blog_post_date).last(10)
+  @user = @current_user
   erb :home
 end
 

@@ -15,5 +15,10 @@ $(document).ready(function(){
     $(".post_box").hide();
   });
 
+  $(".submit_post").click(function(){
+    $(this).animate({
+        height: ($(this).height()==40) ? 100 : 40
+    });
+  });
 });
 

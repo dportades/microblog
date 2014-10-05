@@ -34,7 +34,7 @@
 
       <div class="post_box" >
         <form method="POST" action="/blogposts">
-          <textarea name="[post]blog_post" placeholder="Compose new blog post..." class="submit_post"></textarea>
+          <textarea name="[post]blog_post" placeholder="Compose new blog post..." class="submit_post" maxlength="150"></textarea>
           <br/>
           <input type="submit" class="submit_post_btn">
         </form>
@@ -42,7 +42,7 @@
 
       <div class="media_box"  style="display:none">
         <form method="POST" action="/blogposts">
-          <textarea name="[post]blog_media_url" placeholder="Insert media link..." class="submit_post"></textarea>
+          <textarea name="[post]blog_media_url" placeholder="Insert media link..." class="submit_post" maxlength="150"></textarea>
           <input type="submit" class="submit_post_btn">
         </form>
       </div>
@@ -88,11 +88,13 @@
               <input type="submit" value="Follow Me" class="follow_btn">
             </form>
             <p><%= p.blog_post %></p>
+            <div><%= p.user.username.capitalize %> <%= p.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
           </li>
 
         <% elsif p.blog_media_url %>
           <li class="recent_posts">
             <p><img src="<%= p.blog_media_url %>"></p>
+            <div><%= p.user.username.capitalize %> <%= p.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
             <p><%= p.user.username %></p>
             <p><img src="<%= p.user.account.profile_image_url %>" class="small_profile_img"></p>
             <form method="post" action="/follow">
