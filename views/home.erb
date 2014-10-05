@@ -81,32 +81,37 @@
         <% if p.blog_post %>
 
           <li class="recent_posts">
-            <p><strong><%= p.user.username %></strong></p>
-            <p><img src="<%= p.user.account.profile_image_url %>" class="small_profile_img"></p>
-            <form method="post" action="/follow">
-              <input type="hidden" name="user_id" value="<%= p.user.id %>">
-              <input type="submit" value="Follow Me" class="follow_btn">
-            </form>
-            <p><%= p.blog_post %></p>
-            <div><%= p.user.username.capitalize %> <%= p.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
+            <div class="feed_left">
+              <p><strong><%= p.user.username %></strong></p>
+              <p><img src="<%= p.user.account.profile_image_url %>" class="small_profile_img"></p>
+              <form method="post" action="/follow">
+                <input type="hidden" name="user_id" value="<%= p.user.id %>">
+                <input type="submit" value="Follow Me" class="follow_btn">
+              </form>
+            </div>
+            <div class="feed_right">
+              <p><%= p.blog_post %></p>
+              <div><%= p.user.username.capitalize %> <%= p.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
+            </div>
           </li>
 
         <% elsif p.blog_media_url %>
           <li class="recent_posts">
-            <p><img src="<%= p.blog_media_url %>"></p>
-            <div><%= p.user.username.capitalize %> <%= p.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
-            <p><%= p.user.username %></p>
-            <p><img src="<%= p.user.account.profile_image_url %>" class="small_profile_img"></p>
-            <form method="post" action="/follow">
-              <input type="hidden" name="user_id" value="<%= p.user.id %>">
-              <input type="submit" value="Follow Me" class="follow_btn">
-            </form>
+            <div class="feed_left">
+              <p><%= p.user.username %></p>
+              <p><img src="<%= p.user.account.profile_image_url %>" class="small_profile_img"></p>
+              <form method="post" action="/follow">
+                <input type="hidden" name="user_id" value="<%= p.user.id %>">
+                <input type="submit" value="Follow Me" class="follow_btn">
+              </form>
+            </div>
+            <div class="feed_right">
+              <p><img src="<%= p.blog_media_url %>" class="feed_media"></p>
+              <div><%= p.user.username.capitalize %> <%= p.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
+            </div>
           </li>
-
         <% else %>
-         
             <h6>Sorry there are no posts available.</h6>
-        
         <% end %>
 
       <% end %>

@@ -154,3 +154,20 @@
 .inspiration_box {
   text-align:center;
 }
+
+.feed_left {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+}
+
+.feed_right {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+
+.feed_media {
+  width: 120px;
+  height: 120px;
+}
