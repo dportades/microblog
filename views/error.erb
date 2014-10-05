@@ -1,21 +1,18 @@
-<div id="error_background">
-
-<div class="wrapper">
-  <h1><%= flash[:alert] %></h1>
-  <h1><%= flash[:notice] %></h1>
-
-
-  <p>If you have an account, please sign in again.</p>
+<div class="error_wrapper">
+  <h3><%= flash[:alert] %></h3>
+  <h3><%= flash[:notice] %></h3>
+  
+  <h3>If you have an account, please sign in again.</h3>
   <form method="get" action="/">
-    <input type="submit" value="Sign In" class="submit_btn">
+    <input type="submit" value="Sign In" class="err_btn">
   </form>
-
-  <p>Click here to sign up!</p>
+  <br>
+  <br>
+  <h3>Click here to sign up!</h3>
   <form method="get" action="/index">
-    <input type="submit" value="Sign Up" class="submit_btn">
+    <input type="submit" value="Sign Up" class="err_btn">
   </form>
-
 </div>
 
 
-</div>
+ 

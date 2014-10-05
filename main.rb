@@ -41,6 +41,7 @@ end
 
 get '/profile' do
   set_current_user
+  @user = @current_user
   erb :profile
 end
 
@@ -54,13 +55,17 @@ get '/settings' do
 end
 
 get '/error' do
+  @error_page = true
   erb :error
+end
 
+get '/users/:user_id' do
+  @user = User.find(params[:user_id])
+  erb :profile
 end
 
 
 post '/in' do
-
   email = params[:user][:email]
   password = params[:user][:password]
 
@@ -92,7 +97,7 @@ post '/up' do
 
   session[:user_id] = user.id
 
-  flash[:alert] = "Welcome, #{user.fname}!"
+  # flash[:alert] = "Welcome, #{user.fname}!"
   redirect '/home'
 end
 
@@ -127,7 +132,7 @@ post '/update' do
   @current_user.account.update_attributes(
     profile_image_url: params[:account][:profile_image_url]
   )
-  flash[:notice] = 'Your updates have been saved!'
+  # flash[:notice] = 'Your updates have been saved!'
   redirect '/home'
 end
 
@@ -161,8 +166,8 @@ post "/blogposts" do
   redirect "/profile"
 end
 
-
 # post '/follow' do
-#   Relationship.create(follower_id: ??, followed_id: @current_user)
-#   redirect '/profile'
+#   follow(followed_id)
 # end
+
+

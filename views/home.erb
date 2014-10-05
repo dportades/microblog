@@ -1,3 +1,4 @@
+<div class="blog_header"><h1 class="blog_name">Stay Tuned</h1></div>
 <nav>
   <ul>
     <li><a href="/home"><img src="../images/home.png"></a> | </li>
@@ -9,11 +10,10 @@
   </ul>
 </nav>
 
-<h1><%= flash[:notice] %></h1>
-<h1><%= flash[:alert] %></h1>
+<!-- <h1><%= flash[:notice] %></h1>
+<h1><%= flash[:alert] %></h1> -->
 
 <div class="profile_wrapper">
-
   <div class="left">
     <div class="main_profile">
       <img src="<%= @current_user.account.profile_image_url %>" align="left">
@@ -46,22 +46,23 @@
           <input type="submit" class="submit_post_btn">
         </form>
       </div>
-    </div>
 
-    <h4>Friends you are following:</h4>
-    <% if @current_user.friends.count > 0 %>
-      <ul>
+      <h3>Friends you are following:</h3>
+      <% if @current_user.friends.count > 0 %>
+        <ul>
         <% @current_user.friends.each do |friend| %>
-          <div class="users_div">
-            <li><%= friend.username %></li>
-            <li><img class="homepage_image" src="<%= friend.account.profile_image_url %>"></li>
-          </div>
+          <a href="users/<%= friend.id %>">
+            <div class="users_div">
+              <li><%= friend.username %></li>
+              <li><img class="homepage_image" src="<%= friend.account.profile_image_url %>"></li>
+            </div>
+          </a>
         <% end %>
-      </ul>
-    <% else %>
-      <h4>You're currently not following anyone ... checkout our recent bloggers to find friends!</h4>
-    <% end %>
-
+        </ul>
+      <% else %>
+        <h4>You're currently not following anyone ... checkout our recent bloggers to find friends!</h4>
+      <% end %>
+    </div>
   </div>
 
 <!-- BLOG FEED -->

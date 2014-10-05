@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: 3ec2599d13c1c4d6ab7c5bd291b8ff31e625915e
+  specs:
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
+
+GIT
   remote: git://github.com/treeder/rack-flash.git
   revision: 20e393cdce030f35422dba545a1fed91ed398b29
   specs:
@@ -33,11 +43,6 @@ GEM
     method_source (0.8.2)
     mime-types (2.3)
     minitest (5.4.2)
-    paperclip (4.2.0)
-      activemodel (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.5.3)
-      mime-types
     paperclip-rack (0.0.2)
       paperclip (>= 3.0)
     pry (0.10.1)
@@ -67,6 +72,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  paperclip!
   paperclip-rack
   pry
   rack-flash3!

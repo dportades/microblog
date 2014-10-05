@@ -1,3 +1,4 @@
+<div class="blog_header"><h1 class="blog_name">Stay Tuned</h1></div>
 <nav>
   <ul>
   	<li><a href="/home"><img src="../images/home.png"></a> | </li>
@@ -13,11 +14,11 @@
 
   <div class="left">
     <div class="main_profile">
-      <img src="<%= @current_user.account.profile_image_url %>" align="left">
-      <h4><%= @current_user.username %></h4>
+      <img src="<%= @user.account.profile_image_url %>" align="left">
+      <h4><%= @user.username %></h4>
       <ul>
-        <li><%= @current_user.posts.count %> Posts</li>
-        <li><%= @current_user.friends.count %> Friends</li>
+        <li><%= @user.posts.count %> Posts</li>
+        <li><%= @user.friends.count %> Friends</li>
       </ul>
     </div>
 <!-- INPUT FORM -->
@@ -50,7 +51,7 @@
   <div class="right">
     <div class="blog_feed">
       <ul>
-        <% @current_user.posts.each do |blogpost| %>
+        <% @user.posts.each do |blogpost| %>
           <% if blogpost.blog_post %>
             <div><%= blogpost.blog_post %></div>
           <% else %>

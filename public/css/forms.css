@@ -13,18 +13,30 @@
   text-align: center;
 }
 
+.sign_in_box .input_box {
+  height: 30px;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
 .submit_btn {
   color: #fff;
-  background-color: #000;
+  background-color: purple;
   border-radius: 50px;
-  height: 40px;
-  width: 50%;
+  height: 30px;
+  width: 35%;
   border: none;
 }
 
+.sign_in_box .submit_btn {
+  background-color: #15DAFF;
+}
+
 .submit_btn:hover {
-  color: #fff;
-  background-color: purple;
+  color: #000;
+  background-color: #fff;
 }
 
 #join_btn:hover {
@@ -42,7 +54,6 @@
   border: none;
 }
 
-
 #delete_btn:hover {
   color: #fff;
   background-color: crimson;
@@ -53,18 +64,17 @@
 }
 
 .sign_in_box {
-  width: 25%;
+  width: 18%;
+  padding: 10px;
+  background-color: #000;
   display: none;
   float: right;
   text-align: right;
 }
 
-.sign_in_input {
-  width: 100%;
-}
-
 .sign_in_link {
   text-align: right;
+  padding-top: 10px;
 }
 
 .sign_in_btn {
@@ -76,6 +86,11 @@
   border: none;
   padding: 10px;
   margin-top: 20px;
+}
+
+.sign_in_btn:hover {
+  color: #fff;
+  background-color: #FF2842;
 }
 
 .homepage {
@@ -91,13 +106,9 @@
   left:0;
 }
 
-.homepage_display_name {
-  
-}
-
 .homepage_image {
-  width:150px;
-  height:150px;
+  width:50px;
+  height:50px;
   margin:0 auto;
 }
 
@@ -111,25 +122,20 @@
 }
 
 .follow_btn:hover {
-  color: #fff;
   background-color: mediumturquoise;
-  border-radius: 5px;
   height: 40px;
-  width: 100px;
-  border: none;
+  width: 80px;
 }
-
 
 .users_div {
   border: 1px solid #000;
-}
-
-.users_div {
-  width: 70%;
+  width: 60%;
+  margin-bottom: 20px;
 }
 
 .recent_posts {
-  border: 2px solid #000;
+  /*border: 2px solid #000;*/
+  background-color: #FFF1ED;
   border-radius: 4px;
   margin-bottom: 20px;
   display: block;
