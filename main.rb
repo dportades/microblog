@@ -167,3 +167,9 @@ post '/delete_post' do
   redirect '/profile'
 end
 
+# post '/delete_user' do
+#   set_current_user
+#   @current_user.destroy
+#   redirect '/index'
+# end
+

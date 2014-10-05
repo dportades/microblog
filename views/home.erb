@@ -1,4 +1,14 @@
-<div class="blog_header"><h1 class="blog_name">STAY TUNED</h1></div>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="js/jquery.slides.min.js"></script>
+  <style>
+      #slides {
+      display:none;
+    }
+  </style>
+</head>
+
+<div class="blog_header"><h1 class="blog_name"><a href="/home">STAY TUNED</a></h1></div>
 <nav>
   <ul>
     <li><a href="/home"><img src="../images/home.png"></a> | </li>
@@ -12,6 +22,24 @@
 
 <!-- <h1><%= flash[:notice] %></h1>
 <h1><%= flash[:alert] %></h1> -->
+
+  <script>
+    $(function(){
+      $("#slides").slidesjs({
+        width: 400,
+        height: 128
+      });
+    });
+  </script>
+</head>
+
+  <div id="slides">
+    <img src="http://placehold.it/400x128">
+    <img src="http://placehold.it/400x128">
+    <img src="http://placehold.it/400x128">
+    <img src="http://placehold.it/400x128">
+    <img src="http://placehold.it/400x128">
+  </div>
 
 <div class="profile_wrapper">
   <div class="left">
@@ -71,10 +99,10 @@
   <div class="right">
 
     <ul>
-      <div class="inspiration_box">
+<!--       <div class="inspiration_box">
         <h2>DAILY INSPIRATION:</h2>
         <p><iframe width="480" height="305" src="//www.youtube.com/embed/GaoLU6zKaws" frameborder="0" allowfullscreen></iframe></p>
-      </div>
+      </div> -->
 
       <h3>MOST RECENT POSTS:</h3>
       <% @last_10_ordered_posts.each do |p| %>
@@ -113,6 +141,8 @@
       <% end %>
     </ul>
   </div>
+  <script>
+  </script>
 
 </div>
 
