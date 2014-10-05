@@ -151,18 +151,6 @@ post "/blogposts" do
 
   blogpost.user_id = @current_user.id
   blogpost.save
-  puts "****"
-  puts "****"
-  # current user's id
-  puts blogpost.user_id
-  puts "****"
-  # lists the current post
-  puts blogpost.blog_post
-  puts "****"
-  # lists the first post
-  puts @current_user.posts[0].blog_post
-  puts "****"
-  puts "****"
 
   redirect "/profile"
 end
@@ -172,5 +160,10 @@ post '/follow' do
   @current_user.follow(params[:user_id])
   flash[:notice] = "You've got a new friend!"
   redirect "/users/#{params[:user_id]}"
+end
+
+post '/delete_post' do
+  Post.find(params[:blogpost_id]).destroy
+  redirect '/profile'
 end
 

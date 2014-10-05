@@ -52,28 +52,41 @@
   <div class="right">
     <div class="blog_feed">
       <ul>
+        <h3>POSTS</h3>
 
-        <% @user.posts.each do |blogpost| %>
+        <% @user.posts.reverse.each do |blogpost| %>
           <% if blogpost.blog_post %>
 
             <li class="recent_posts">
-              <div class="post_box">
+
+              <div class="post_div">
                 <p><%= blogpost.blog_post %></p>
-                <div><%= @user.username.capitalize %> <%= blogpost.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
+                <%= @user.username.capitalize %> <%= blogpost.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %>
+                <form method="post" action="/delete_post">
+                  <input type="hidden" name="blogpost_id" value="<%= blogpost.id %>">
+                  <input type="submit" value="Delete Post" class="follow_btn">
+                </form>
               </div>
+
             <% else %>
-              <div class="post_box">
+
+              <div class="post_div">
                 <p><img src="<%= blogpost.blog_media_url %>"></p>
-                <div><%= @user.username.capitalize %> <%= blogpost.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
+                <%= @user.username.capitalize %> <%= blogpost.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %>
+                <form method="post" action="/delete_post">
+                  <input type="hidden" name="blogpost_id" value="<%= blogpost.id %>">
+                  <input type="submit" value="Delete Post" class="follow_btn">
+                </form>
               </div>
+
             </li>
+
             <% end %>
           <% end %>
       </ul>
     </div>
   </div>
 </div>
-
 
 
 

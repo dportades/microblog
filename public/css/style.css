@@ -175,10 +175,16 @@ ul li img {
 	vertical-align: top;
 }
 
-.post_box {
-  border: 1px solid black;
+.post_div {
+  border-top: 1px dotted black;
   margin-bottom: 20px;
-  padding: 5px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  text-align: right;
+}
+
+.post_div .follow_btn {
+  margin-top: 10px;
 }
 
 .blog_feed img {
