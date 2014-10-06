@@ -1,11 +1,8 @@
 <head>
-  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="js/jquery.slides.min.js"></script>
-  <style>
-      #slides {
-      display:none;
-    }
-  </style>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://unslider.com/unslider.min.js"></script>
+    <link rel="stylesheet" href="/css/slider.css"/>
+
 </head>
 
 <div class="blog_header"><h1 class="blog_name"><a href="/home">STAY TUNED</a></h1></div>
@@ -23,23 +20,41 @@
 <!-- <h1><%= flash[:notice] %></h1>
 <h1><%= flash[:alert] %></h1> -->
 
-  <script>
-    $(function(){
-      $("#slides").slidesjs({
-        width: 400,
-        height: 128
-      });
+
+<script>
+$(function() {
+    $('.banner').unslider({
+
+        speed: 300,
+        delay: 2000,
+        fluid: true,
+        dots: true,
+        pause: true
+
+
     });
-  </script>
+});
+</script>
 </head>
 
-  <div id="slides">
-    <img src="http://placehold.it/400x128">
-    <img src="http://placehold.it/400x128">
-    <img src="http://placehold.it/400x128">
-    <img src="http://placehold.it/400x128">
-    <img src="http://placehold.it/400x128">
-  </div>
+<section id="banner-container">
+    <div class="banner">
+        <ul>
+           <li style="background: url(http://www.returndates.com/backgrounds/NewGirl.jpg)no-repeat; background-size:cover;  height:400px;">
+            <h1>NEW GIRL</h1>
+            <p>Sample Text</p>
+           </li>
+            <li style="background: url(http://cdn.fansided.com/wp-content/blogs.dir/229/files/2013/07/breakingbad.jpg)no-repeat top center; background-size:cover;  height:400px;">
+            <h1>BREAKING BAD</h1>
+            <p>Sample text</p>
+            </li>
+           <li style="background:url(http://www.returndates.com/backgrounds/houseofcards.jpg) no-repeat bottom; background-size:cover;  height:400px;">
+            <h1>HOUSE OF CARDS</h1>
+            <p>Sample text</p>
+           </li>   
+        </ul>
+    </div>
+</section>
 
 <div class="profile_wrapper">
   <div class="left">
