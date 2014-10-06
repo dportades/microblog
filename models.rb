@@ -37,3 +37,5 @@ class Relationship < ActiveRecord::Base
   belongs_to :friend, class_name: "User", foreign_key: :followed_id
   validates_uniqueness_of :follower_id, scope: :followed_id
 end
+
+

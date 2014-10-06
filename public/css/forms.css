@@ -5,10 +5,10 @@
 }
 
 #arrow {
-  font-size: 4em;
   position: fixed;
-  bottom: -10%;
-  left: 48%;
+  bottom: 0%;
+  left: 47%;
+  width: 75px;
 }
 
 /*BUTTONS*/

@@ -64,6 +64,10 @@ ul li img {
   text-transform: uppercase;
 }
 
+.blog_name:hover {
+  color:tomato;
+}
+
 .profile_wrapper {
   width: 80%;
   margin: 0 auto;
@@ -106,14 +110,18 @@ ul li img {
 	padding:20px;
 }
 
+.post_box{
+  border: 1px dotted black;
+  margin-bottom: 40px;
+}
+
 /* INPUT BLOG DIV */
 
 .input_blog {
 	width:100%;
-	border-radius: 5px;
-	margin: 20px;
+  margin: 20px;
 	display:block;
-
+  border-top: 1px dotted black;
 }
 
 /* INPUT FIELD AND BUTTONS */

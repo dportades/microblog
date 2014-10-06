@@ -151,7 +151,6 @@ post "/blogposts" do
 
   blogpost.user_id = @current_user.id
   blogpost.save
-
   redirect "/profile"
 end
 
@@ -163,13 +162,15 @@ post '/follow' do
 end
 
 post '/delete_post' do
-  Post.find(params[:blogpost_id]).destroy
+  set_current_user
+  @current_user.posts.find(params[:blogpost_id]).destroy
   redirect '/profile'
 end
 
-# post '/delete_user' do
-#   set_current_user
-#   @current_user.destroy
-#   redirect '/index'
-# end
+post '/delete_user' do
+  set_current_user
+  @current_user.destroy
+  session.delete(:user_id)
+  redirect '/index'
+end
 
