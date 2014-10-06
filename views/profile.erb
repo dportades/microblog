@@ -48,7 +48,7 @@
     </div>
 
     <div>
-      <h3 class="trending_title">Trending in TV</h3>
+      <h3 class="trending_title">TRENDING IN TV</h3>
 
       <div class="trending">
 
@@ -57,7 +57,7 @@
             <img src="http://media.giphy.com/media/yDr4Hu1ffquBi/giphy.gif">
           </div>
           <div class="column_right">
-            <p>CARTOONS</p>
+            <p><strong>CARTOONS</strong></p>
             <a href="http://www.mtv.com/news/1953575/saturday-morning-cartoons/">The End Of An Era: Goodbye, Saturday Morning Cartoons</a>
           </div>
         </div>
@@ -67,7 +67,7 @@
             <div><img src="http://i.imgur.com/ZbPhm4P.jpg"></div>
           </div>
           <div class="column_right">
-            <p>TV SHOWS</p>
+            <p><strong>TV SHOWS</strong></p>
             <a href="http://www.eonline.com/news/585603/why-homeland-haters-should-watch-tonight"> Why Homeland Haters Should Watch Tonight</a>
           </div>
         </div>
@@ -77,7 +77,7 @@
             <img src="http://www.nbc.com/sites/nbcunbc/files/files/styles/nbc_gallery_carousel/public/images/2014/10/05/SNL1664_FAULT_IN_OUR_STARS_1050x1050.jpg?itok=kN0-ncEo">
           </div>
           <div class="column_right">
-            <p>COMEDY</p>
+            <p><strong>COMEDY</strong></p>
             <a href="http://www.mtv.com/news/1953537/fault-in-our-stars-snl-ebola/">Sarah Silverman Goes Hazel Grace In SNL’s ‘Fault In Our Stars’ Spoof</a>
           </div>
         </div>
@@ -87,8 +87,18 @@
             <img src="http://www.eonline.com/eol_images/Entire_Site/2014829/rs_560x415-140929121207-1024.spoiler-chat.jpg">
           </div>
           <div class="column_right">
-            <p>SPOILERS</p>
+            <p><strong>SPOILERS</strong></p>
             <a href="http://www.eonline.com/news/583654/spoiler-chat-how-to-get-away-with-murder-the-walking-dead-bones-grey-s-vampire-diaries-more> Why Homeland Haters Should Watch Tonight">How to Get Away With Murder, The Walking Dead, Bones, Grey's &amp; More!</a>
+          </div>
+        </div>
+
+        <div class="trending_row">
+          <div class="column_left">
+            <img src="http://media.comicbook.com/wp-content/uploads/2013/03/star-trek-3.jpg">
+          </div>
+          <div class="column_right">
+            <p><strong>MOVIES NEWS</strong></p>
+            <a href="http://www.empireonline.com/news/story.asp?NID=42369">Star Trek 3 Plans Digital Shoot With Claudio Miranda</a>
           </div>
         </div>
       </div>   
@@ -99,7 +109,7 @@
   <div class="right">
     <div class="blog_feed">
       <ul>
-        <h3>POSTS</h3>
+        <h3 class="post-title">POSTS</h3>
 
         <% @user.posts.reverse.each do |blogpost| %>
           <% if blogpost.blog_post %>
@@ -107,7 +117,7 @@
             <li class="recent_posts">
 
               <div class="post_div">
-                <p><%= blogpost.blog_post %></p>
+                <p class="post_text"><%= blogpost.blog_post %></p>
                 <%= @user.username.capitalize %> <%= blogpost.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %>
                 <form method="post" action="/delete_post">
                   <input type="hidden" name="blogpost_id" value="<%= blogpost.id %>">

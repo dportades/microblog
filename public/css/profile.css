@@ -1,5 +1,7 @@
 .trending_title {
   margin-left: 30px;
+  font-family: 'Paytone One', sans-serif;
+  font-weight: lighter;
 }
 
 .trending{
@@ -29,5 +31,18 @@
 }
 
 .trending_row {
-  border-bottom: 1px dotted black;
+  border-top: 1px dotted black;
+  padding: 20px;
+}
+
+.post_text {
+  font-size: 16px;
+  line-height: 20px;
+  padding-bottom: 20px;
+  width: 65%;
+}
+
+.post-title {
+  font-family: 'Paytone One', sans-serif;
+  font-weight: lighter;
 }

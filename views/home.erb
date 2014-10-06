@@ -17,9 +17,6 @@
   </ul>
 </nav>
 
-<!-- <h1><%= flash[:notice] %></h1>
-<h1><%= flash[:alert] %></h1> -->
-
 
 <script>
 $(function() {
@@ -42,15 +39,15 @@ $(function() {
         <ul>
            <li style="background: url(http://www.returndates.com/backgrounds/NewGirl.jpg)no-repeat; background-size:cover;  height:400px;">
             <h1>NEW GIRL</h1>
-            <p>Sample Text</p>
+            <p>Do You Absolutely Love Zooey Deschanel Or Why Is This Show Still On The Air?</p>
            </li>
             <li style="background: url(http://cdn.fansided.com/wp-content/blogs.dir/229/files/2013/07/breakingbad.jpg)no-repeat top center; background-size:cover;  height:400px;">
             <h1>BREAKING BAD</h1>
-            <p>Sample text</p>
+            <p>Best Acting On TV or A Bit Disappointed?</p>
             </li>
            <li style="background:url(http://www.returndates.com/backgrounds/houseofcards.jpg) no-repeat bottom; background-size:cover;  height:400px;">
             <h1>HOUSE OF CARDS</h1>
-            <p>Sample text</p>
+            <p>Watch at whatever pace you'd like--immediately.</p>
            </li>   
         </ul>
     </div>
@@ -90,7 +87,7 @@ $(function() {
         </form>
       </div>
 
-      <h3 class="sub_title">Friends you are following<span><i class="fa fa-arrow-circle-down"></i></span></h3>
+      <h3 class="sub_title">FRIENDS YOU'RE FOLLOWING<span><i class="fa fa-arrow-circle-down"></i></span></h3>
       <div class="friends_list">
         <% if @current_user.friends.count > 0 %>
           <ul>
@@ -112,17 +109,22 @@ $(function() {
 
 <!-- BLOG FEED -->
   <div class="right">
-
+  <h3 class="most_recent">MOST RECENT POSTS:</h3>
     <ul>
 <!--       <div class="inspiration_box">
         <h2>DAILY INSPIRATION:</h2>
         <p><iframe width="480" height="305" src="//www.youtube.com/embed/GaoLU6zKaws" frameborder="0" allowfullscreen></iframe></p>
       </div> -->
 
-      <h3>MOST RECENT POSTS:</h3>
+      
       <% @last_10_ordered_posts.each do |p| %>
         <% if p.blog_post %>
           <li class="recent_posts">
+          <div class="feed_border">
+            <div class="feed_right">
+              <p class="post_text"><%= p.blog_post %></p>
+              <div><%= p.user.username.capitalize %> <%= p.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
+            </div>
             <div class="feed_left">
               <p><strong><%= p.user.username %></strong></p>
               <p><img src="<%= p.user.account.profile_image_url %>" class="small_profile_img"></p>
@@ -131,14 +133,17 @@ $(function() {
                 <input type="submit" value="Follow Me" class="follow_btn">
               </form>
             </div>
-            <div class="feed_right">
-              <p><%= p.blog_post %></p>
-              <div><%= p.user.username.capitalize %> <%= p.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
-            </div>
+            
+          </div>
           </li>
 
         <% elsif p.blog_media_url %>
           <li class="recent_posts">
+           <div class="feed_border">
+            <div class="feed_right">
+              <p><img src="<%= p.blog_media_url %>" class="feed_media"></p>
+              <div><%= p.user.username.capitalize %> <%= p.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
+            </div>
             <div class="feed_left">
               <p><%= p.user.username %></p>
               <p><img src="<%= p.user.account.profile_image_url %>" class="small_profile_img"></p>
@@ -147,9 +152,6 @@ $(function() {
                 <input type="submit" value="Follow Me" class="follow_btn">
               </form>
             </div>
-            <div class="feed_right">
-              <p><img src="<%= p.blog_media_url %>" class="feed_media"></p>
-              <div><%= p.user.username.capitalize %> <%= p.blog_post_date.strftime("tuned in on %m/%d/%Y at %I:%M%p") %></div>
             </div>
           </li>
         <% end %>

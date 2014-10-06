@@ -10,6 +10,10 @@ body {
   font-weight: light;
 }
 
+img {
+  border-radius: 4px;
+}
+
 nav {
 	padding:2px;
 	letter-spacing: 1px;
@@ -59,10 +63,6 @@ ul li img {
   margin-top: 0;
   text-transform: uppercase;
 }
-
-/*.blog_name:hover {
-
-}*/
 
 .profile_wrapper {
   width: 80%;
@@ -212,18 +212,19 @@ ul li img {
 
 /*ERROR PAGE*/
 .error-page {
-  background-image: url(http://i406.photobucket.com/albums/pp149/Mooney2620/static.gif);
+  background-image: url("../images/static.gif");
 }
 
 .error_wrapper {
-  background-color: rgba(255, 255, 255, 1);
+ /* background-color: rgba(255, 255, 255, 1);*/
+  background-color: rgba(39, 37, 37, 1);
+  color: #fff;
   padding: 30px;
   border-radius: 5px;
-  margin: 0 auto;
   position: fixed;
-  width: 30%;
+  width: 40%;
   text-align: center;
-  left: 35%;
+  left: 28%;
   top: 10%;
 }
 

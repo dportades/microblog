@@ -4,6 +4,13 @@
   text-align: center;
 }
 
+#arrow {
+  font-size: 4em;
+  position: fixed;
+  bottom: -10%;
+  left: 48%;
+}
+
 /*BUTTONS*/
 .submit_btn {
   color: #fff;
@@ -26,15 +33,12 @@
 #join_btn:hover {
   color: #fff;
   background-color: limegreen;
-
 }
 
 #save_btn:hover {
   color: #fff;
   background-color: limegreen;
   border-radius: 50px;
-/*  height: 40px;
-  width: 50%;*/
   border: none;
 }
 
@@ -42,8 +46,6 @@
   color: #fff;
   background-color: crimson;
   border-radius: 50px;
-/*  height: 40px;
-  width: 50%;*/
   border: none;
 }
 
@@ -74,8 +76,6 @@
 
 .follow_btn:hover {
   background-color: mediumturquoise;
-/*  height: 40px;
-  width: 80px;*/
 }
 
 /*INPUT BOXES*/
@@ -161,7 +161,7 @@
 
 .recent_posts {
   border-radius: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: block;
 }
 
@@ -182,17 +182,33 @@
 .feed_left {
   display: inline-block;
   width: 30%;
+  margin-top: 20px;
+  margin-bottom: 20px;
   vertical-align: top;
 }
 
 .feed_right {
   display: inline-block;
   width: 50%;
-  vertical-align: top;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .feed_media {
-  width: 120px;
-  height: 120px;
+  width: 60%;
+  height: 60%;
 }
+
+.most_recent {
+  margin-left: 40%;
+  font-family: 'Paytone One', sans-serif;
+  font-weight: lighter;
+}
+
+.feed_border {
+  border-top: 1px dotted black;
+
+}
+
 
