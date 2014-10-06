@@ -88,8 +88,6 @@ ul li img {
 .main_profile {
 	width:100%;
 	height:190px;
-	/*border:2px solid black;*/
-  background-color: #FFF1ED;
 	border-radius: 5px;
 	margin: 20px;
   padding-top: 2px;
@@ -112,8 +110,6 @@ ul li img {
 
 .input_blog {
 	width:100%;
-	/*border:2px solid black;*/
-  background-color: #FFF1ED;
 	border-radius: 5px;
 	margin: 20px;
 	display:block;
@@ -167,8 +163,6 @@ ul li img {
 /* BLOG FEED DIV */
 .blog_feed {
 	width:100%;
-	/*border:2px solid black;*/
-  background-color: #FFF1ED;
 	border-radius: 5px;
 	margin: 20px;
   margin-left: 40px;
