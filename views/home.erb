@@ -117,7 +117,7 @@ $(function() {
       </div> -->
 
       
-      <% @last_10_ordered_posts.each do |p| %>
+      <% @last_10_ordered_posts.reverse.each do |p| %>
         <% if p.blog_post %>
           <li class="recent_posts">
           <div class="feed_border">
